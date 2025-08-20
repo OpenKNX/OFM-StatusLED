@@ -42,7 +42,7 @@
             </ComObjectRefs>
           </Static>
           <Dynamic>
-            <Channel Id="%AID%_CH-%PREFIX%" Number="%PREFIX%" Name="Main" Text="Status LEDs" HelpContext="SLED-Dokumentation" Icon="button-pointer">
+            <Channel Id="%AID%_CH-%PREFIX%" Number="%PREFIX%" Name="Main" Text="Status LEDs" HelpContext="SLED-Dokumentation" Icon="led-on">
               <ParameterBlock Id="%AID%_PB-nnn" Name="Basic" Text="Allgemein" Icon="cog-outline" HelpContext="SLED-Dokumentation">
                 <!-- Hidden -->
                 <ParameterRefRef RefId="%AID%_P-%TT%00002_R-%TT%0000201" />
