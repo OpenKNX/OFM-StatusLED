@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_14/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" xmlns="http://knx.org/xml/project/14" CreatedBy="KNX MT" ToolVersion="5.1.255.16695">
+  <op:config name="%SLED_NumChannelsDefault%" value="%N%" />
+  <op:config name="%SLED_ShowInputSelector%" value="1" />
+  <ManufacturerData>
+    <Manufacturer>
+      <ApplicationPrograms>
+        <ApplicationProgram>
+          <Static>
+            <ParameterTypes>
+              <ParameterType Id="%AID%_PT-SLEDNumChannels" Name="SLEDNumChannels">
+                <TypeNumber SizeInBit="8" Type="unsignedInt" minInclusive="1" maxInclusive="%N%" />
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDInputs" Name="SLEDInputs">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="Externes KO" Value="0" Id="%ENID%" DisplayOrder="0" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDMode" Name="SLEDMode">
+                <TypeRestriction Base="Value" SizeInBit="7">
+                  <Enumeration Text="Deaktviert" Value="0" Id="%ENID%" />
+                  <Enumeration Text="1fach-Taster" Value="1" Id="%ENID%" />
+                  <Enumeration Text="2fach-Taster" Value="2" Id="%ENID%" />
+                  <Enumeration Text="Mehrfach-Klick" Value="3" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDLock" Name="SLEDLock">
+                <TypeRestriction Base="Value" SizeInBit="2">
+                  <Enumeration Text="nicht aktiv" Value="0" Id="%ENID%" />
+                  <Enumeration Text="gesperrt (1) / nicht gesperrt (0)" Value="1" Id="%ENID%" />
+                  <Enumeration Text="gesperrt (0) / nicht gesperrt (1)" Value="2" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutput" Name="SLEDOutput">
+                <TypeRestriction Base="Value" SizeInBit="8">
+                  <Enumeration Text="Deaktiviert" Value="0" Id="%ENID%" />
+                  <Enumeration Text="DPT 1.001 Schalten" Value="1" Id="%ENID%" />
+                  <Enumeration Text="DPT 2.001 Zwangsführung" Value="2" Id="%ENID%" />
+                  <Enumeration Text="DPT 5.005 (0..255)" Value="4" Id="%ENID%" />
+                  <Enumeration Text="DPT 5.001 (0..100%)" Value="5" Id="%ENID%" />
+                  <Enumeration Text="DPT 7.001 (0..65535)" Value="3" Id="%ENID%" />
+                  <Enumeration Text="DPT 18.001 Szene" Value="6" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDim" Name="SLEDOutputDim">
+                <TypeRestriction Base="Value" SizeInBit="8">
+                  <Enumeration Text="Deaktiviert" Value="0" Id="%ENID%" />
+                  <Enumeration Text="DPT 1.001 Schalten" Value="1" Id="%ENID%" />
+                  <Enumeration Text="DPT 2.001 Zwangsführung" Value="2" Id="%ENID%" />
+                  <Enumeration Text="DPT 3.007 Dimmen" Value="7" Id="%ENID%" />
+                  <Enumeration Text="DPT 3.008 Jalousie" Value="8" Id="%ENID%" />
+                  <Enumeration Text="DPT 5.005 (0..255)" Value="4" Id="%ENID%" />
+                  <Enumeration Text="DPT 5.001 (0..100%)" Value="5" Id="%ENID%" />
+                  <Enumeration Text="DPT 7.001 (0..65535)" Value="3" Id="%ENID%" />
+                  <Enumeration Text="DPT 18.001 Szene" Value="6" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDSendingEvent" Name="SLEDSendingEvent">
+                <TypeRestriction Base="Value" SizeInBit="1">
+                  <Enumeration Text="Inaktiv" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Aktiv"   Value="1" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDpt1" Name="SLEDOutputDpt1">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="AUS (0)"    Value="1" Id="%ENID%" />
+                  <Enumeration Text="EIN (1)"    Value="2" Id="%ENID%" />
+                  <Enumeration Text="Umschalten" Value="3" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutput2" Name="SLEDOutput2">
+                <TypeRestriction Base="Value" SizeInBit="2">
+                  <Enumeration Text="Inaktiv" Value="0" Id="%ENID%" />
+                  <Enumeration Text="AUS (0)" Value="1" Id="%ENID%" />
+                  <Enumeration Text="EIN (1)" Value="2" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDpt2" Name="SLEDOutputDpt2">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="normal AUS (00)"           Value="0"  Id="%ENID%" />
+                  <Enumeration Text="normal EIN (01)"           Value="1"  Id="%ENID%" />
+                  <Enumeration Text="normal Umschalten (0_)"    Value="10" Id="%ENID%" />
+                  <Enumeration Text="priorität AUS (10)"        Value="2"  Id="%ENID%" />
+                  <Enumeration Text="priorität EIN (11)"        Value="3"  Id="%ENID%" />
+                  <Enumeration Text="priorität Umschalten (1_)" Value="11" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDpt3Stop" Name="SLEDOutputDpt3Stop">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="Stop" Value="16" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDpt3007" Name="SLEDOutputDpt3007">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="Verringern, 100% (01)" Value="1"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 50% (02)"  Value="2"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 25% (03)"  Value="3"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 12% (04)"  Value="4"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 6% (05)"   Value="5"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 3% (06)"   Value="6"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 1% (07)"   Value="7"   Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 100% (09)"    Value="9"   Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 50% (0A)"     Value="10"  Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 25% (0B)"     Value="11"  Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 12% (0C)"     Value="12"  Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 6% (0D)"      Value="13"  Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 3% (0E)"      Value="14"  Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 1% (0F)"      Value="15"  Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDpt3008" Name="SLEDOutputDpt3008">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="Hoch, 100% (01)"    Value="1"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 50% (02)"     Value="2"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 25% (03)"     Value="3"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 12% (04)"     Value="4"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 6% (05)"      Value="5"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 3% (06)"      Value="6"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 1% (07)"      Value="7"   Id="%ENID%" />
+                  <Enumeration Text="Runter, 100% (09)"  Value="9"   Id="%ENID%" />
+                  <Enumeration Text="Runter, 50% (0A)"   Value="10"  Id="%ENID%" />
+                  <Enumeration Text="Runter, 25% (0B)"   Value="11"  Id="%ENID%" />
+                  <Enumeration Text="Runter, 12% (0C)"   Value="12"  Id="%ENID%" />
+                  <Enumeration Text="Runter, 6% (0D)"    Value="13"  Id="%ENID%" />
+                  <Enumeration Text="Runter, 3% (0E)"    Value="14"  Id="%ENID%" />
+                  <Enumeration Text="Runter, 1% (0F)"    Value="15"  Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDpt3007Single" Name="SLEDOutputDpt3007Single">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="1-Tasten Dimmen"      Value="17"  Id="%ENID%" />
+                  <Enumeration Text="Verringern, 100% (01)" Value="1"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 50% (02)"  Value="2"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 25% (03)"  Value="3"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 12% (04)"  Value="4"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 6% (05)"   Value="5"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 3% (06)"   Value="6"   Id="%ENID%" />
+                  <Enumeration Text="Verringern, 1% (07)"   Value="7"   Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 100% (09)"    Value="9"   Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 50% (0A)"     Value="10"  Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 25% (0B)"     Value="11"  Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 12% (0C)"     Value="12"  Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 6% (0D)"      Value="13"  Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 3% (0E)"      Value="14"  Id="%ENID%" />
+                  <Enumeration Text="Erhöhen, 1% (0F)"      Value="15"  Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDpt3008Single" Name="SLEDOutputDpt3008Single">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="1-Tasten Bedienung" Value="17"  Id="%ENID%" />
+                  <Enumeration Text="Hoch, 100% (01)"    Value="1"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 50% (02)"     Value="2"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 25% (03)"     Value="3"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 12% (04)"     Value="4"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 6% (05)"      Value="5"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 3% (06)"      Value="6"   Id="%ENID%" />
+                  <Enumeration Text="Hoch, 1% (07)"      Value="7"   Id="%ENID%" />
+                  <Enumeration Text="Runter, 100% (09)"  Value="9"   Id="%ENID%" />
+                  <Enumeration Text="Runter, 50% (0A)"   Value="10"  Id="%ENID%" />
+                  <Enumeration Text="Runter, 25% (0B)"   Value="11"  Id="%ENID%" />
+                  <Enumeration Text="Runter, 12% (0C)"   Value="12"  Id="%ENID%" />
+                  <Enumeration Text="Runter, 6% (0D)"    Value="13"  Id="%ENID%" />
+                  <Enumeration Text="Runter, 3% (0E)"    Value="14"  Id="%ENID%" />
+                  <Enumeration Text="Runter, 1% (0F)"    Value="15"  Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDpt5" Name="SLEDOutputDpt5">
+                <TypeNumber SizeInBit="16" Type="unsignedInt" minInclusive="0" maxInclusive="255" />
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-StatusFallbackTime" Name="StatusFallbackTime">
+                <TypeNumber SizeInBit="16" Type="unsignedInt" minInclusive="5" maxInclusive="65535" />
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDpt5001" Name="SLEDOutputDpt5001">
+                <TypeNumber SizeInBit="16" Type="unsignedInt" minInclusive="0" maxInclusive="100" />
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDpt7" Name="SLEDOutputDpt7">
+                <TypeNumber SizeInBit="16" Type="unsignedInt" minInclusive="0" maxInclusive="65535" />
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDOutputDpt18" Name="SLEDOutputDpt18">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="Szene 1 (Aktivieren)" Value="1" Id="%ENID%" />
+                  <Enumeration Text="Szene 2 (Aktivieren)" Value="2" Id="%ENID%" />
+                  <Enumeration Text="Szene 3 (Aktivieren)" Value="3" Id="%ENID%" />
+                  <Enumeration Text="Szene 4 (Aktivieren)" Value="4" Id="%ENID%" />
+                  <Enumeration Text="Szene 5 (Aktivieren)" Value="5" Id="%ENID%" />
+                  <Enumeration Text="Szene 6 (Aktivieren)" Value="6" Id="%ENID%" />
+                  <Enumeration Text="Szene 7 (Aktivieren)" Value="7" Id="%ENID%" />
+                  <Enumeration Text="Szene 8 (Aktivieren)" Value="8" Id="%ENID%" />
+                  <Enumeration Text="Szene 9 (Aktivieren)" Value="9" Id="%ENID%" />
+                  <Enumeration Text="Szene 10 (Aktivieren)" Value="10" Id="%ENID%" />
+                  <Enumeration Text="Szene 11 (Aktivieren)" Value="11" Id="%ENID%" />
+                  <Enumeration Text="Szene 12 (Aktivieren)" Value="12" Id="%ENID%" />
+                  <Enumeration Text="Szene 13 (Aktivieren)" Value="13" Id="%ENID%" />
+                  <Enumeration Text="Szene 14 (Aktivieren)" Value="14" Id="%ENID%" />
+                  <Enumeration Text="Szene 15 (Aktivieren)" Value="15" Id="%ENID%" />
+                  <Enumeration Text="Szene 16 (Aktivieren)" Value="16" Id="%ENID%" />
+                  <Enumeration Text="Szene 17 (Aktivieren)" Value="17" Id="%ENID%" />
+                  <Enumeration Text="Szene 18 (Aktivieren)" Value="18" Id="%ENID%" />
+                  <Enumeration Text="Szene 19 (Aktivieren)" Value="19" Id="%ENID%" />
+                  <Enumeration Text="Szene 20 (Aktivieren)" Value="20" Id="%ENID%" />
+                  <Enumeration Text="Szene 21 (Aktivieren)" Value="21" Id="%ENID%" />
+                  <Enumeration Text="Szene 22 (Aktivieren)" Value="22" Id="%ENID%" />
+                  <Enumeration Text="Szene 23 (Aktivieren)" Value="23" Id="%ENID%" />
+                  <Enumeration Text="Szene 24 (Aktivieren)" Value="24" Id="%ENID%" />
+                  <Enumeration Text="Szene 25 (Aktivieren)" Value="25" Id="%ENID%" />
+                  <Enumeration Text="Szene 26 (Aktivieren)" Value="26" Id="%ENID%" />
+                  <Enumeration Text="Szene 27 (Aktivieren)" Value="27" Id="%ENID%" />
+                  <Enumeration Text="Szene 28 (Aktivieren)" Value="28" Id="%ENID%" />
+                  <Enumeration Text="Szene 29 (Aktivieren)" Value="29" Id="%ENID%" />
+                  <Enumeration Text="Szene 30 (Aktivieren)" Value="30" Id="%ENID%" />
+                  <Enumeration Text="Szene 31 (Aktivieren)" Value="31" Id="%ENID%" />
+                  <Enumeration Text="Szene 32 (Aktivieren)" Value="32" Id="%ENID%" />
+                  <Enumeration Text="Szene 33 (Aktivieren)" Value="33" Id="%ENID%" />
+                  <Enumeration Text="Szene 34 (Aktivieren)" Value="34" Id="%ENID%" />
+                  <Enumeration Text="Szene 35 (Aktivieren)" Value="35" Id="%ENID%" />
+                  <Enumeration Text="Szene 36 (Aktivieren)" Value="36" Id="%ENID%" />
+                  <Enumeration Text="Szene 37 (Aktivieren)" Value="37" Id="%ENID%" />
+                  <Enumeration Text="Szene 38 (Aktivieren)" Value="38" Id="%ENID%" />
+                  <Enumeration Text="Szene 39 (Aktivieren)" Value="39" Id="%ENID%" />
+                  <Enumeration Text="Szene 40 (Aktivieren)" Value="40" Id="%ENID%" />
+                  <Enumeration Text="Szene 41 (Aktivieren)" Value="41" Id="%ENID%" />
+                  <Enumeration Text="Szene 42 (Aktivieren)" Value="42" Id="%ENID%" />
+                  <Enumeration Text="Szene 43 (Aktivieren)" Value="43" Id="%ENID%" />
+                  <Enumeration Text="Szene 44 (Aktivieren)" Value="44" Id="%ENID%" />
+                  <Enumeration Text="Szene 45 (Aktivieren)" Value="45" Id="%ENID%" />
+                  <Enumeration Text="Szene 46 (Aktivieren)" Value="46" Id="%ENID%" />
+                  <Enumeration Text="Szene 47 (Aktivieren)" Value="47" Id="%ENID%" />
+                  <Enumeration Text="Szene 48 (Aktivieren)" Value="48" Id="%ENID%" />
+                  <Enumeration Text="Szene 49 (Aktivieren)" Value="49" Id="%ENID%" />
+                  <Enumeration Text="Szene 50 (Aktivieren)" Value="50" Id="%ENID%" />
+                  <Enumeration Text="Szene 51 (Aktivieren)" Value="51" Id="%ENID%" />
+                  <Enumeration Text="Szene 52 (Aktivieren)" Value="52" Id="%ENID%" />
+                  <Enumeration Text="Szene 53 (Aktivieren)" Value="53" Id="%ENID%" />
+                  <Enumeration Text="Szene 54 (Aktivieren)" Value="54" Id="%ENID%" />
+                  <Enumeration Text="Szene 55 (Aktivieren)" Value="55" Id="%ENID%" />
+                  <Enumeration Text="Szene 56 (Aktivieren)" Value="56" Id="%ENID%" />
+                  <Enumeration Text="Szene 57 (Aktivieren)" Value="57" Id="%ENID%" />
+                  <Enumeration Text="Szene 58 (Aktivieren)" Value="58" Id="%ENID%" />
+                  <Enumeration Text="Szene 59 (Aktivieren)" Value="59" Id="%ENID%" />
+                  <Enumeration Text="Szene 60 (Aktivieren)" Value="60" Id="%ENID%" />
+                  <Enumeration Text="Szene 61 (Aktivieren)" Value="61" Id="%ENID%" />
+                  <Enumeration Text="Szene 62 (Aktivieren)" Value="62" Id="%ENID%" />
+                  <Enumeration Text="Szene 63 (Aktivieren)" Value="63" Id="%ENID%" />
+                  <Enumeration Text="Szene 64 (Aktivieren)" Value="64" Id="%ENID%" />
+                  <Enumeration Text="Szene 1 (Lernen)" Value="101" Id="%ENID%" />
+                  <Enumeration Text="Szene 2 (Lernen)" Value="102" Id="%ENID%" />
+                  <Enumeration Text="Szene 3 (Lernen)" Value="103" Id="%ENID%" />
+                  <Enumeration Text="Szene 4 (Lernen)" Value="104" Id="%ENID%" />
+                  <Enumeration Text="Szene 5 (Lernen)" Value="105" Id="%ENID%" />
+                  <Enumeration Text="Szene 6 (Lernen)" Value="106" Id="%ENID%" />
+                  <Enumeration Text="Szene 7 (Lernen)" Value="107" Id="%ENID%" />
+                  <Enumeration Text="Szene 8 (Lernen)" Value="108" Id="%ENID%" />
+                  <Enumeration Text="Szene 9 (Lernen)" Value="109" Id="%ENID%" />
+                  <Enumeration Text="Szene 10 (Lernen)" Value="110" Id="%ENID%" />
+                  <Enumeration Text="Szene 11 (Lernen)" Value="111" Id="%ENID%" />
+                  <Enumeration Text="Szene 12 (Lernen)" Value="112" Id="%ENID%" />
+                  <Enumeration Text="Szene 13 (Lernen)" Value="113" Id="%ENID%" />
+                  <Enumeration Text="Szene 14 (Lernen)" Value="114" Id="%ENID%" />
+                  <Enumeration Text="Szene 15 (Lernen)" Value="115" Id="%ENID%" />
+                  <Enumeration Text="Szene 16 (Lernen)" Value="116" Id="%ENID%" />
+                  <Enumeration Text="Szene 17 (Lernen)" Value="117" Id="%ENID%" />
+                  <Enumeration Text="Szene 18 (Lernen)" Value="118" Id="%ENID%" />
+                  <Enumeration Text="Szene 19 (Lernen)" Value="119" Id="%ENID%" />
+                  <Enumeration Text="Szene 20 (Lernen)" Value="120" Id="%ENID%" />
+                  <Enumeration Text="Szene 21 (Lernen)" Value="121" Id="%ENID%" />
+                  <Enumeration Text="Szene 22 (Lernen)" Value="122" Id="%ENID%" />
+                  <Enumeration Text="Szene 23 (Lernen)" Value="123" Id="%ENID%" />
+                  <Enumeration Text="Szene 24 (Lernen)" Value="124" Id="%ENID%" />
+                  <Enumeration Text="Szene 25 (Lernen)" Value="125" Id="%ENID%" />
+                  <Enumeration Text="Szene 26 (Lernen)" Value="126" Id="%ENID%" />
+                  <Enumeration Text="Szene 27 (Lernen)" Value="127" Id="%ENID%" />
+                  <Enumeration Text="Szene 28 (Lernen)" Value="128" Id="%ENID%" />
+                  <Enumeration Text="Szene 29 (Lernen)" Value="129" Id="%ENID%" />
+                  <Enumeration Text="Szene 30 (Lernen)" Value="130" Id="%ENID%" />
+                  <Enumeration Text="Szene 31 (Lernen)" Value="131" Id="%ENID%" />
+                  <Enumeration Text="Szene 32 (Lernen)" Value="132" Id="%ENID%" />
+                  <Enumeration Text="Szene 33 (Lernen)" Value="133" Id="%ENID%" />
+                  <Enumeration Text="Szene 34 (Lernen)" Value="134" Id="%ENID%" />
+                  <Enumeration Text="Szene 35 (Lernen)" Value="135" Id="%ENID%" />
+                  <Enumeration Text="Szene 36 (Lernen)" Value="136" Id="%ENID%" />
+                  <Enumeration Text="Szene 37 (Lernen)" Value="137" Id="%ENID%" />
+                  <Enumeration Text="Szene 38 (Lernen)" Value="138" Id="%ENID%" />
+                  <Enumeration Text="Szene 39 (Lernen)" Value="139" Id="%ENID%" />
+                  <Enumeration Text="Szene 40 (Lernen)" Value="140" Id="%ENID%" />
+                  <Enumeration Text="Szene 41 (Lernen)" Value="141" Id="%ENID%" />
+                  <Enumeration Text="Szene 42 (Lernen)" Value="142" Id="%ENID%" />
+                  <Enumeration Text="Szene 43 (Lernen)" Value="143" Id="%ENID%" />
+                  <Enumeration Text="Szene 44 (Lernen)" Value="144" Id="%ENID%" />
+                  <Enumeration Text="Szene 45 (Lernen)" Value="145" Id="%ENID%" />
+                  <Enumeration Text="Szene 46 (Lernen)" Value="146" Id="%ENID%" />
+                  <Enumeration Text="Szene 47 (Lernen)" Value="147" Id="%ENID%" />
+                  <Enumeration Text="Szene 48 (Lernen)" Value="148" Id="%ENID%" />
+                  <Enumeration Text="Szene 49 (Lernen)" Value="149" Id="%ENID%" />
+                  <Enumeration Text="Szene 50 (Lernen)" Value="150" Id="%ENID%" />
+                  <Enumeration Text="Szene 51 (Lernen)" Value="151" Id="%ENID%" />
+                  <Enumeration Text="Szene 52 (Lernen)" Value="152" Id="%ENID%" />
+                  <Enumeration Text="Szene 53 (Lernen)" Value="153" Id="%ENID%" />
+                  <Enumeration Text="Szene 54 (Lernen)" Value="154" Id="%ENID%" />
+                  <Enumeration Text="Szene 55 (Lernen)" Value="155" Id="%ENID%" />
+                  <Enumeration Text="Szene 56 (Lernen)" Value="156" Id="%ENID%" />
+                  <Enumeration Text="Szene 57 (Lernen)" Value="157" Id="%ENID%" />
+                  <Enumeration Text="Szene 58 (Lernen)" Value="158" Id="%ENID%" />
+                  <Enumeration Text="Szene 59 (Lernen)" Value="159" Id="%ENID%" />
+                  <Enumeration Text="Szene 60 (Lernen)" Value="160" Id="%ENID%" />
+                  <Enumeration Text="Szene 61 (Lernen)" Value="161" Id="%ENID%" />
+                  <Enumeration Text="Szene 62 (Lernen)" Value="162" Id="%ENID%" />
+                  <Enumeration Text="Szene 63 (Lernen)" Value="163" Id="%ENID%" />
+                  <Enumeration Text="Szene 64 (Lernen)" Value="164" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-SLEDReactionTime" Name="SLEDReactionTime">
+                <TypeRestriction Base="Value" SizeInBit="8">
+                  <Enumeration Text="0,1s" Value="1" Id="%ENID%" />
+                  <Enumeration Text="0,2s" Value="2" Id="%ENID%" />
+                  <Enumeration Text="0,3s" Value="3" Id="%ENID%" />
+                  <Enumeration Text="0,4s" Value="4" Id="%ENID%" />
+                  <Enumeration Text="0,5s" Value="5" Id="%ENID%" />
+                  <Enumeration Text="0,6s" Value="6" Id="%ENID%" />
+                  <Enumeration Text="0,7s" Value="7" Id="%ENID%" />
+                  <Enumeration Text="0,8s" Value="8" Id="%ENID%" />
+                  <Enumeration Text="0,9s" Value="9" Id="%ENID%" />
+                  <Enumeration Text="1,0s" Value="10" Id="%ENID%" />
+                  <Enumeration Text="1,1s" Value="11" Id="%ENID%" />
+                  <Enumeration Text="1,2s" Value="12" Id="%ENID%" />
+                  <Enumeration Text="1,3s" Value="13" Id="%ENID%" />
+                  <Enumeration Text="1,4s" Value="14" Id="%ENID%" />
+                  <Enumeration Text="1,5s" Value="15" Id="%ENID%" />
+                  <Enumeration Text="1,6s" Value="16" Id="%ENID%" />
+                  <Enumeration Text="1,7s" Value="17" Id="%ENID%" />
+                  <Enumeration Text="1,8s" Value="18" Id="%ENID%" />
+                  <Enumeration Text="1,9s" Value="19" Id="%ENID%" />
+                  <Enumeration Text="2,0s" Value="20" Id="%ENID%" />
+                  <Enumeration Text="2,1s" Value="21" Id="%ENID%" />
+                  <Enumeration Text="2,2s" Value="22" Id="%ENID%" />
+                  <Enumeration Text="2,3s" Value="23" Id="%ENID%" />
+                  <Enumeration Text="2,4s" Value="24" Id="%ENID%" />
+                  <Enumeration Text="2,5s" Value="25" Id="%ENID%" />
+                  <Enumeration Text="2,6s" Value="26" Id="%ENID%" />
+                  <Enumeration Text="2,7s" Value="27" Id="%ENID%" />
+                  <Enumeration Text="2,8s" Value="28" Id="%ENID%" />
+                  <Enumeration Text="2,9s" Value="29" Id="%ENID%" />
+                  <Enumeration Text="3,0s" Value="30" Id="%ENID%" />
+                  <Enumeration Text="3,1s" Value="31" Id="%ENID%" />
+                  <Enumeration Text="3,2s" Value="32" Id="%ENID%" />
+                  <Enumeration Text="3,3s" Value="33" Id="%ENID%" />
+                  <Enumeration Text="3,4s" Value="34" Id="%ENID%" />
+                  <Enumeration Text="3,5s" Value="35" Id="%ENID%" />
+                  <Enumeration Text="3,6s" Value="36" Id="%ENID%" />
+                  <Enumeration Text="3,7s" Value="37" Id="%ENID%" />
+                  <Enumeration Text="3,8s" Value="38" Id="%ENID%" />
+                  <Enumeration Text="3,9s" Value="39" Id="%ENID%" />
+                  <Enumeration Text="4,0s" Value="40" Id="%ENID%" />
+                  <Enumeration Text="4,1s" Value="41" Id="%ENID%" />
+                  <Enumeration Text="4,2s" Value="42" Id="%ENID%" />
+                  <Enumeration Text="4,3s" Value="43" Id="%ENID%" />
+                  <Enumeration Text="4,4s" Value="44" Id="%ENID%" />
+                  <Enumeration Text="4,5s" Value="45" Id="%ENID%" />
+                  <Enumeration Text="4,6s" Value="46" Id="%ENID%" />
+                  <Enumeration Text="4,7s" Value="47" Id="%ENID%" />
+                  <Enumeration Text="4,8s" Value="48" Id="%ENID%" />
+                  <Enumeration Text="4,9s" Value="49" Id="%ENID%" />
+                  <Enumeration Text="5,0s" Value="50" Id="%ENID%" />
+                  <Enumeration Text="5,1s" Value="51" Id="%ENID%" />
+                  <Enumeration Text="5,2s" Value="52" Id="%ENID%" />
+                  <Enumeration Text="5,3s" Value="53" Id="%ENID%" />
+                  <Enumeration Text="5,4s" Value="54" Id="%ENID%" />
+                  <Enumeration Text="5,5s" Value="55" Id="%ENID%" />
+                  <Enumeration Text="5,6s" Value="56" Id="%ENID%" />
+                  <Enumeration Text="5,7s" Value="57" Id="%ENID%" />
+                  <Enumeration Text="5,8s" Value="58" Id="%ENID%" />
+                  <Enumeration Text="5,9s" Value="59" Id="%ENID%" />
+                  <Enumeration Text="6,0s" Value="60" Id="%ENID%" />
+                  <Enumeration Text="6,5s" Value="65" Id="%ENID%" />
+                  <Enumeration Text="7,0s" Value="70" Id="%ENID%" />
+                  <Enumeration Text="7,5s" Value="75" Id="%ENID%" />
+                  <Enumeration Text="8,0s" Value="80" Id="%ENID%" />
+                  <Enumeration Text="8,5s" Value="85" Id="%ENID%" />
+                  <Enumeration Text="9,0s" Value="90" Id="%ENID%" />
+                  <Enumeration Text="9,5s" Value="95" Id="%ENID%" />
+                  <Enumeration Text="10,0s" Value="100" Id="%ENID%" />
+                  <Enumeration Text="10,5s" Value="105" Id="%ENID%" />
+                  <Enumeration Text="11,0s" Value="110" Id="%ENID%" />
+                  <Enumeration Text="11,5s" Value="115" Id="%ENID%" />
+                  <Enumeration Text="12,0s" Value="120" Id="%ENID%" />
+                  <Enumeration Text="12,5s" Value="125" Id="%ENID%" />
+                  <Enumeration Text="13,0s" Value="130" Id="%ENID%" />
+                  <Enumeration Text="13,5s" Value="135" Id="%ENID%" />
+                  <Enumeration Text="14,0s" Value="140" Id="%ENID%" />
+                  <Enumeration Text="14,5s" Value="145" Id="%ENID%" />
+                  <Enumeration Text="15,0s" Value="150" Id="%ENID%" />
+                  <Enumeration Text="15,5s" Value="155" Id="%ENID%" />
+                  <Enumeration Text="16,0s" Value="160" Id="%ENID%" />
+                  <Enumeration Text="16,5s" Value="165" Id="%ENID%" />
+                  <Enumeration Text="17,0s" Value="170" Id="%ENID%" />
+                  <Enumeration Text="17,5s" Value="175" Id="%ENID%" />
+                  <Enumeration Text="18,0s" Value="180" Id="%ENID%" />
+                  <Enumeration Text="18,5s" Value="185" Id="%ENID%" />
+                  <Enumeration Text="19,0s" Value="190" Id="%ENID%" />
+                  <Enumeration Text="19,5s" Value="195" Id="%ENID%" />
+                  <Enumeration Text="20,0s" Value="200" Id="%ENID%" />
+                  <Enumeration Text="20,5s" Value="205" Id="%ENID%" />
+                  <Enumeration Text="21,0s" Value="210" Id="%ENID%" />
+                  <Enumeration Text="21,5s" Value="215" Id="%ENID%" />
+                  <Enumeration Text="22,0s" Value="220" Id="%ENID%" />
+                  <Enumeration Text="22,5s" Value="225" Id="%ENID%" />
+                  <Enumeration Text="23,0s" Value="230" Id="%ENID%" />
+                  <Enumeration Text="23,5s" Value="235" Id="%ENID%" />
+                  <Enumeration Text="24,0s" Value="240" Id="%ENID%" />
+                  <Enumeration Text="24,5s" Value="245" Id="%ENID%" />
+                  <Enumeration Text="25,0s" Value="250" Id="%ENID%" />
+                  <Enumeration Text="25,5s" Value="255" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="%AID%_PT-SLEDReactionTimeDefault" Name="SLEDReactionTimeDefault">
+                <TypeRestriction Base="Value" SizeInBit="8">
+                  <Enumeration Text="Basiseinstellung" Value="0" Id="%ENID%" />
+                  <Enumeration Text="0,1s" Value="1" Id="%ENID%" />
+                  <Enumeration Text="0,2s" Value="2" Id="%ENID%" />
+                  <Enumeration Text="0,3s" Value="3" Id="%ENID%" />
+                  <Enumeration Text="0,4s" Value="4" Id="%ENID%" />
+                  <Enumeration Text="0,5s" Value="5" Id="%ENID%" />
+                  <Enumeration Text="0,6s" Value="6" Id="%ENID%" />
+                  <Enumeration Text="0,7s" Value="7" Id="%ENID%" />
+                  <Enumeration Text="0,8s" Value="8" Id="%ENID%" />
+                  <Enumeration Text="0,9s" Value="9" Id="%ENID%" />
+                  <Enumeration Text="1,0s" Value="10" Id="%ENID%" />
+                  <Enumeration Text="1,1s" Value="11" Id="%ENID%" />
+                  <Enumeration Text="1,2s" Value="12" Id="%ENID%" />
+                  <Enumeration Text="1,3s" Value="13" Id="%ENID%" />
+                  <Enumeration Text="1,4s" Value="14" Id="%ENID%" />
+                  <Enumeration Text="1,5s" Value="15" Id="%ENID%" />
+                  <Enumeration Text="1,6s" Value="16" Id="%ENID%" />
+                  <Enumeration Text="1,7s" Value="17" Id="%ENID%" />
+                  <Enumeration Text="1,8s" Value="18" Id="%ENID%" />
+                  <Enumeration Text="1,9s" Value="19" Id="%ENID%" />
+                  <Enumeration Text="2,0s" Value="20" Id="%ENID%" />
+                  <Enumeration Text="2,1s" Value="21" Id="%ENID%" />
+                  <Enumeration Text="2,2s" Value="22" Id="%ENID%" />
+                  <Enumeration Text="2,3s" Value="23" Id="%ENID%" />
+                  <Enumeration Text="2,4s" Value="24" Id="%ENID%" />
+                  <Enumeration Text="2,5s" Value="25" Id="%ENID%" />
+                  <Enumeration Text="2,6s" Value="26" Id="%ENID%" />
+                  <Enumeration Text="2,7s" Value="27" Id="%ENID%" />
+                  <Enumeration Text="2,8s" Value="28" Id="%ENID%" />
+                  <Enumeration Text="2,9s" Value="29" Id="%ENID%" />
+                  <Enumeration Text="3,0s" Value="30" Id="%ENID%" />
+                  <Enumeration Text="3,1s" Value="31" Id="%ENID%" />
+                  <Enumeration Text="3,2s" Value="32" Id="%ENID%" />
+                  <Enumeration Text="3,3s" Value="33" Id="%ENID%" />
+                  <Enumeration Text="3,4s" Value="34" Id="%ENID%" />
+                  <Enumeration Text="3,5s" Value="35" Id="%ENID%" />
+                  <Enumeration Text="3,6s" Value="36" Id="%ENID%" />
+                  <Enumeration Text="3,7s" Value="37" Id="%ENID%" />
+                  <Enumeration Text="3,8s" Value="38" Id="%ENID%" />
+                  <Enumeration Text="3,9s" Value="39" Id="%ENID%" />
+                  <Enumeration Text="4,0s" Value="40" Id="%ENID%" />
+                  <Enumeration Text="4,1s" Value="41" Id="%ENID%" />
+                  <Enumeration Text="4,2s" Value="42" Id="%ENID%" />
+                  <Enumeration Text="4,3s" Value="43" Id="%ENID%" />
+                  <Enumeration Text="4,4s" Value="44" Id="%ENID%" />
+                  <Enumeration Text="4,5s" Value="45" Id="%ENID%" />
+                  <Enumeration Text="4,6s" Value="46" Id="%ENID%" />
+                  <Enumeration Text="4,7s" Value="47" Id="%ENID%" />
+                  <Enumeration Text="4,8s" Value="48" Id="%ENID%" />
+                  <Enumeration Text="4,9s" Value="49" Id="%ENID%" />
+                  <Enumeration Text="5,0s" Value="50" Id="%ENID%" />
+                  <Enumeration Text="5,1s" Value="51" Id="%ENID%" />
+                  <Enumeration Text="5,2s" Value="52" Id="%ENID%" />
+                  <Enumeration Text="5,3s" Value="53" Id="%ENID%" />
+                  <Enumeration Text="5,4s" Value="54" Id="%ENID%" />
+                  <Enumeration Text="5,5s" Value="55" Id="%ENID%" />
+                  <Enumeration Text="5,6s" Value="56" Id="%ENID%" />
+                  <Enumeration Text="5,7s" Value="57" Id="%ENID%" />
+                  <Enumeration Text="5,8s" Value="58" Id="%ENID%" />
+                  <Enumeration Text="5,9s" Value="59" Id="%ENID%" />
+                  <Enumeration Text="6,0s" Value="60" Id="%ENID%" />
+                  <Enumeration Text="6,5s" Value="65" Id="%ENID%" />
+                  <Enumeration Text="7,0s" Value="70" Id="%ENID%" />
+                  <Enumeration Text="7,5s" Value="75" Id="%ENID%" />
+                  <Enumeration Text="8,0s" Value="80" Id="%ENID%" />
+                  <Enumeration Text="8,5s" Value="85" Id="%ENID%" />
+                  <Enumeration Text="9,0s" Value="90" Id="%ENID%" />
+                  <Enumeration Text="9,5s" Value="95" Id="%ENID%" />
+                  <Enumeration Text="10,0s" Value="100" Id="%ENID%" />
+                  <Enumeration Text="10,5s" Value="105" Id="%ENID%" />
+                  <Enumeration Text="11,0s" Value="110" Id="%ENID%" />
+                  <Enumeration Text="11,5s" Value="115" Id="%ENID%" />
+                  <Enumeration Text="12,0s" Value="120" Id="%ENID%" />
+                  <Enumeration Text="12,5s" Value="125" Id="%ENID%" />
+                  <Enumeration Text="13,0s" Value="130" Id="%ENID%" />
+                  <Enumeration Text="13,5s" Value="135" Id="%ENID%" />
+                  <Enumeration Text="14,0s" Value="140" Id="%ENID%" />
+                  <Enumeration Text="14,5s" Value="145" Id="%ENID%" />
+                  <Enumeration Text="15,0s" Value="150" Id="%ENID%" />
+                  <Enumeration Text="15,5s" Value="155" Id="%ENID%" />
+                  <Enumeration Text="16,0s" Value="160" Id="%ENID%" />
+                  <Enumeration Text="16,5s" Value="165" Id="%ENID%" />
+                  <Enumeration Text="17,0s" Value="170" Id="%ENID%" />
+                  <Enumeration Text="17,5s" Value="175" Id="%ENID%" />
+                  <Enumeration Text="18,0s" Value="180" Id="%ENID%" />
+                  <Enumeration Text="18,5s" Value="185" Id="%ENID%" />
+                  <Enumeration Text="19,0s" Value="190" Id="%ENID%" />
+                  <Enumeration Text="19,5s" Value="195" Id="%ENID%" />
+                  <Enumeration Text="20,0s" Value="200" Id="%ENID%" />
+                  <Enumeration Text="20,5s" Value="205" Id="%ENID%" />
+                  <Enumeration Text="21,0s" Value="210" Id="%ENID%" />
+                  <Enumeration Text="21,5s" Value="215" Id="%ENID%" />
+                  <Enumeration Text="22,0s" Value="220" Id="%ENID%" />
+                  <Enumeration Text="22,5s" Value="225" Id="%ENID%" />
+                  <Enumeration Text="23,0s" Value="230" Id="%ENID%" />
+                  <Enumeration Text="23,5s" Value="235" Id="%ENID%" />
+                  <Enumeration Text="24,0s" Value="240" Id="%ENID%" />
+                  <Enumeration Text="24,5s" Value="245" Id="%ENID%" />
+                  <Enumeration Text="25,0s" Value="250" Id="%ENID%" />
+                  <Enumeration Text="25,5s" Value="255" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+            </ParameterTypes>
+            <Parameters>
+              <Parameter Id="%AID%_P-%TT%00002" Name="SelectHelper"          ParameterType="%AID%_PT-ValueDpt5"         Text=""        Value="0" Access="None" />
+
+              <Union SizeInBit="32">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="0" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%00011" Name="ReactionTimeMultiClick" Offset="0" BitOffset="0" ParameterType="%AID%_PT-SLEDReactionTime" Text="Mehrfach-Klick" Value="4" />
+                <Parameter Id="%AID%_UP-%TT%00012" Name="ReactionTimeLong"       Offset="1" BitOffset="0" ParameterType="%AID%_PT-SLEDReactionTime" Text="Langer Tastendruck" Value="4" />
+                <Parameter Id="%AID%_UP-%TT%00013" Name="ReactionTimeExtraLong"  Offset="2" BitOffset="0" ParameterType="%AID%_PT-SLEDReactionTime" Text="Extra langer Tastendruck" Value="16" />
+                <Parameter Id="%AID%_UP-%TT%00014" Name="VisibleChannels"        Offset="3" BitOffset="0" ParameterType="%AID%_PT-SLEDNumChannels"  Text="Verfügbare Kanäle" Value="%SLED_NumChannelsDefault%" SuffixText=" von %N%" />
+              </Union>
+            </Parameters>
+            <ParameterRefs>
+              <ParameterRef Id="%AID%_P-%TT%00002_R-%TT%0000201" RefId="%AID%_P-%TT%00002" />
+              <ParameterRef Id="%AID%_UP-%TT%00011_R-%TT%0001101" RefId="%AID%_UP-%TT%00011" />
+              <ParameterRef Id="%AID%_UP-%TT%00012_R-%TT%0001201" RefId="%AID%_UP-%TT%00012" />
+              <ParameterRef Id="%AID%_UP-%TT%00013_R-%TT%0001301" RefId="%AID%_UP-%TT%00013" />
+              <ParameterRef Id="%AID%_UP-%TT%00014_R-%TT%0001401" RefId="%AID%_UP-%TT%00014" />
+            </ParameterRefs>
+            <ComObjectTable>
+            </ComObjectTable>
+            <ComObjectRefs>
+            </ComObjectRefs>
+          </Static>
+          <Dynamic>
+            <Channel Id="%AID%_CH-%PREFIX%" Number="%PREFIX%" Name="Main" Text="Virtuelle Taster" HelpContext="SLED-Dokumentation" Icon="button-pointer">
+              <ParameterBlock Id="%AID%_PB-nnn" Name="Basic" Text="Allgemein" Icon="cog-outline" HelpContext="SLED-Dokumentation">
+                <!-- Hidden -->
+                <ParameterRefRef RefId="%AID%_P-%TT%00002_R-%TT%0000201" />
+
+                <!-- Version -->                                
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="Tastermodul" UIHint="Headline" />
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="Version: %ModuleVersion%" />
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
+
+                <!-- Verfuegbare-Kanaele -->
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="Kanalauswahl" UIHint="Headline" />
+                <ParameterRefRef RefId="%AID%_UP-%TT%00014_R-%TT%0001401" HelpContext="BASE-Verfuegbare-Kanaele" IndentLevel="1" />
+
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="Reaktionszeiten" UIHint="Headline" />
+                <!-- MC -->
+                <ParameterRefRef RefId="%AID%_UP-%TT%00011_R-%TT%0001101" IndentLevel="1" HelpContext="%DOC%"/>
+                <!-- Long -->
+                <ParameterRefRef RefId="%AID%_UP-%TT%00012_R-%TT%0001201" IndentLevel="1" HelpContext="%DOC%" />
+                <!-- ExtraLong -->
+                <ParameterRefRef RefId="%AID%_UP-%TT%00013_R-%TT%0001301" IndentLevel="1" HelpContext="%DOC%" />
+              </ParameterBlock>
+
+              <op:include href="StatusLED.templ.xml" xpath="//Dynamic/ChannelIndependentBlock/*" type="template" prefix="SLED" IsInner="true" />
+
+              <!-- followed by all channels -->
+              <choose ParamRefId="%AID%_UP-%TT%00014_R-%TT%0001401">
+                <when test="&lt;%N%">
+                  <ParameterBlock Id="%AID%_PB-nnn" Name="fAdditionalChannels" Text="(mehr)" Icon="dots-horizontal" HelpContext="Empty">
+                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Kanalauswahl" UIHint="Headline" />
+                    <ParameterRefRef RefId="%AID%_UP-%TT%00014_R-%TT%0001401" HelpContext="BASE-Verfuegbare-Kanaele" IndentLevel="1" />
+                  </ParameterBlock>
+                </when>
+              </choose>
+            </Channel>
+          </Dynamic>
+        </ApplicationProgram>
+      </ApplicationPrograms>
+      <Baggages>
+        <Baggage TargetPath="" Name="Help_de.zip" Id="%FILE-HELP-de%">
+          <FileInfo TimeInfo="%DATETIME%" />
+        </Baggage>
+        <Baggage TargetPath="" Name="Icons.zip" Id="%FILE-ICONS%">
+          <FileInfo TimeInfo="%DATETIME%" />
+        </Baggage>
+      </Baggages>
+    </Manufacturer>
+  </ManufacturerData>
+</KNX>

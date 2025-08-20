@@ -1,0 +1,14 @@
+{
+  "name": "OFM-StatusLED",
+  "version": "0.1.0",
+  "authors": [
+    {
+        "name": "Ing-Dom",
+        "email": "dom@ing-dom.de",
+        "url": "https://openknx.de",
+        "maintainer": true
+    }],
+  "dependencies":
+  {
+  }
+}
