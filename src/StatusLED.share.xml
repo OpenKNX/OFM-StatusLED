@@ -29,6 +29,7 @@
 
             <Parameters>
               <Union SizeInBit="32">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="0" BitOffset="0" />
                 <Parameter Id="%AID%_UP-%TT%00001" Name="VisibleChannels"        Offset="0" BitOffset="0" ParameterType="%AID%_PT-SLEDNumChannels"  Text="Verfügbare Kanäle" Value="%SLED_NumChannelsDefault%" SuffixText=" von %N%" />
               </Union>
             </Parameters>
@@ -44,9 +45,6 @@
           <Dynamic>
             <Channel Id="%AID%_CH-%PREFIX%" Number="%PREFIX%" Name="Main" Text="Status LEDs" HelpContext="SLED-Dokumentation" Icon="led-on">
               <ParameterBlock Id="%AID%_PB-nnn" Name="Basic" Text="Allgemein" Icon="cog-outline" HelpContext="SLED-Dokumentation">
-                <!-- Hidden -->
-                <ParameterRefRef RefId="%AID%_P-%TT%00002_R-%TT%0000201" />
-
                 <!-- Version -->                                
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="StatusLED" UIHint="Headline" />
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="Version: %ModuleVersion%" />
@@ -54,7 +52,7 @@
 
                 <!-- Verfuegbare-Kanaele -->
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="Kanalauswahl" UIHint="Headline" />
-                <ParameterRefRef RefId="%AID%_UP-%TT%0001_R-%TT%0000101" HelpContext="BASE-Verfuegbare-Kanaele" IndentLevel="1" />
+                <ParameterRefRef RefId="%AID%_UP-%TT%00001_R-%TT%0000101" HelpContext="BASE-Verfuegbare-Kanaele" IndentLevel="1" />
 
               </ParameterBlock>
 

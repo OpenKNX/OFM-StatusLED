@@ -1,10 +1,10 @@
 ﻿### Dokumentation
 
-Eine vollständige Applikationsbeschreibung ist unter folgendem Link verfügbar: https://github.com/openknx/OFM-StatusLED/blob/v1/doc/Applikationsbeschreibung-Taster.md
+Eine vollständige Applikationsbeschreibung ist unter folgendem Link verfügbar: https://github.com/openknx/OFM-VirtualButton/blob/v1/doc/Applikationsbeschreibung-Taster.md
 
 Dies ist ein OpenKNX-Modul, um virtuelle Taster bereitzustellen. Diese können mit integrierten Binäreingängen (falls vorhanden) oder mit externen Tastern verwendet werden. Dies kann beispielsweise sinnvoll sein, wenn die Funktionen des vorhandenen Tasters nicht ausreichend sind. Voraussetzung für die Verwendung ist, dass der verwendete Taster oder Binäreingang bei einem Tastendruck ein EIN und beim Loslassen ein AUS senden kann.
 
-Das Repository findet man unter: https://github.com/openknx/OFM-StatusLED
+Das Repository findet man unter: https://github.com/openknx/OFM-VirtualButton
 
 #### Modus
 - 1fach-Taster
