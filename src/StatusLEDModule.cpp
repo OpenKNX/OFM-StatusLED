@@ -36,10 +36,4 @@ void StatusLEDModule::processInputKo(GroupObject& iKo)
         _channels[i]->processInputKo(iKo);
 }
 
-void StatusLEDModule::processAfterStartupDelay()
-{
-    for (uint8_t i = 0; i < ParamSLED_VisibleChannels; i++)
-        _channels[i]->readStatus();
-}
-
 StatusLEDModule openknxStatusLEDModule;

@@ -13,15 +13,17 @@
                 <TypeNumber SizeInBit="8" Type="unsignedInt" minInclusive="1" maxInclusive="%N%" />
               </ParameterType>
 
-              <ParameterType Id="%AID%_PT-SLEDInputs" Name="SLEDInputs">
-                <TypeRestriction Base="Value" SizeInBit="16">
-                  <Enumeration Text="Externes KO" Value="0" Id="%ENID%" DisplayOrder="0" />
+              <ParameterType Id="%AID%_PT-SLEDType" Name="SLEDType">
+                <TypeRestriction Base="Value" SizeInBit="8" UIHint="DropDown">
+                  <Enumeration Text="einfarbig" Value="0" Id="%ENID%" DisplayOrder="0" />
+                  <Enumeration Text="RGB" Value="1" Id="%ENID%" DisplayOrder="0" />
+                  <Enumeration Text="RGB (einfarbig)" Value="2" Id="%ENID%" DisplayOrder="0" />
                 </TypeRestriction>
               </ParameterType>
 
               <ParameterType Id="%AID%_PT-SLEDMode" Name="SLEDMode">
-                <TypeRestriction Base="Value" SizeInBit="16">
-                  <Enumeration Text="Deaktviert" Value="0" Id="%ENID%" DisplayOrder="0"/>
+                <TypeRestriction Base="Value" SizeInBit="16" UIHint="DropDown">
+                  <Enumeration Text="Deaktiviert" Value="0" Id="%ENID%" DisplayOrder="0"/>
                   <Enumeration Text="StatusLED" Value="1" Id="%ENID%" DisplayOrder="1"/>
                 </TypeRestriction>
               </ParameterType>
