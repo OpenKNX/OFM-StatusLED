@@ -13,16 +13,21 @@
               </ParameterType>
               <ParameterType Id="%AID%_PT-SLEDType" Name="SLEDType">
                 <TypeRestriction Base="Value" SizeInBit="4" UIHint="DropDown">
-                  <Enumeration Text="Deaktiviert" Value="0" Id="%ENID%" DisplayOrder="0"/>
                   <Enumeration Text="einfarbig" Value="1" Id="%ENID%" DisplayOrder="1" />
                   <Enumeration Text="RGB" Value="2" Id="%ENID%" DisplayOrder="2" />
-                  <Enumeration Text="RGB (einfarbig)" Value="3" Id="%ENID%" DisplayOrder="3" />
                 </TypeRestriction>
               </ParameterType>
               <ParameterType Id="%AID%_PT-SLEDMode" Name="SLEDMode">
-                <TypeRestriction Base="Value" SizeInBit="16" UIHint="DropDown">
+                <TypeRestriction Base="Value" SizeInBit="4" UIHint="DropDown">
                   <Enumeration Text="LED-Funktion" Value="1" Id="%ENID%" DisplayOrder="1"/>
-                  <Enumeration Text="Steerung über KO" Value="2" Id="%ENID%" DisplayOrder="2"/>
+                  <Enumeration Text="Steuerung über KO" Value="2" Id="%ENID%" DisplayOrder="2"/>
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="%AID%_PT-SLEDAnimation" Name="SLEDAnimation">
+                <TypeRestriction Base="Value" SizeInBit="32" UIHint="DropDown">
+                  <Enumeration Text="keine Animation" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Blinken" Value="1" Id="%ENID%" />
+                  <Enumeration Text="Pulsieren" Value="2" Id="%ENID%" />
                 </TypeRestriction>
               </ParameterType>
             </ParameterTypes>

@@ -11,10 +11,35 @@
 
               <Union SizeInBit="16">
                 <Memory CodeSegment="%AID%_RS-04-00000" Offset="0" BitOffset="0" />
-                <Parameter Id="%AID%_UP-%TT%%CC%001" Name="Type_%C%" Offset="0" BitOffset="0" ParameterType="%AID%_PT-SLEDType" Text="LED-Typ" Value="%SLEDdefaultType%C%%" />
-                <Parameter Id="%AID%_UP-%TT%%CC%002" Name="ColorOff_%C%" Offset="1" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für AUS" Value="#000000" />
-                <Parameter Id="%AID%_UP-%TT%%CC%003" Name="ColorOn_%C%" Offset="4" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für AN" Value="#00FF00"/>
-                <Parameter Id="%AID%_UP-%TT%%CC%010" Name="b%C%Mode" Offset="7" BitOffset="0" ParameterType="%AID%_PT-SLEDMode" Text="Betriebsmodus" Value="1" />
+                <Parameter Id="%AID%_UP-%TT%%CC%001" Name="Mode_%C%" Offset="0" BitOffset="0" ParameterType="%AID%_PT-SLEDMode" Text="Betriebsmodus" Value="%SLEDdefaultMode%C%%" />
+
+                <Parameter Id="%AID%_UP-%TT%%CC%002" Name="Func_%C%" Offset="1" BitOffset="0" ParameterType="%AID%_PT-SLEDFunc" Text="LED-Funktion" Value="%SLEDdefaultFunc%C%%" />
+
+                <Parameter Id="%AID%_UP-%TT%%CC%003" Name="Type_%C%" Offset="0" BitOffset="4" ParameterType="%AID%_PT-SLEDType" Text="LED-Typ" Value="%SLEDdefaultType%C%%" />
+
+                <Parameter Id="%AID%_UP-%TT%%CC%005" Name="ColorManual_%C%" Offset="1" BitOffset="4" ParameterType="%AID%_PT-OnOffYesNo" Text="Farbe per KO steuern" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%006" Name="BrightnessManual_%C%" Offset="1" BitOffset="5" ParameterType="%AID%_PT-OnOffYesNo" Text="Helligkeit per KO steuern" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%007" Name="AnimationManual_%C%" Offset="1" BitOffset="6" ParameterType="%AID%_PT-OnOffYesNo" Text="Animation per KO steuern" Value="0" />
+
+
+
+                <Parameter Id="%AID%_UP-%TT%%CC%010" Name="ColorOff_%C%" Offset="3" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für AUS" Value="#000000" />
+                <Parameter Id="%AID%_UP-%TT%%CC%011" Name="ColorOn_%C%" Offset="6" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für AN" Value="#00FF00"/>
+                <Parameter Id="%AID%_UP-%TT%%CC%012" Name="ColorPrio1_%C%" Offset="9" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für Prio1" Value="#00FF00"/>
+                <Parameter Id="%AID%_UP-%TT%%CC%013" Name="ColorPrio2_%C%" Offset="12" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für Prio2" Value="#00FF00"/>
+
+                <Parameter Id="%AID%_UP-%TT%%CC%014" Name="BrightnessOff_%C%" Offset="15" BitOffset="0" ParameterType="%AID%_PT-Percent" Text="Helligkeit für AUS" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%015" Name="BrightnessOn_%C%" Offset="16" BitOffset="0" ParameterType="%AID%_PT-Percent" Text="Helligkeit für AN" Value="100" />
+                <Parameter Id="%AID%_UP-%TT%%CC%016" Name="BrightnessPrio1_%C%" Offset="17" BitOffset="0" ParameterType="%AID%_PT-Percent" Text="Helligkeit für Prio1" Value="100" />
+                <Parameter Id="%AID%_UP-%TT%%CC%017" Name="BrightnessPrio2_%C%" Offset="18" BitOffset="0" ParameterType="%AID%_PT-Percent" Text="Helligkeit für Prio2" Value="100" />
+
+                <Parameter Id="%AID%_UP-%TT%%CC%018" Name="AnimationOff_%C%" Offset="19" BitOffset="0" ParameterType="%AID%_PT-SLEDAnimation" Text="Animation für AUS" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%019" Name="AnimationOn_%C%" Offset="23" BitOffset="0" ParameterType="%AID%_PT-SLEDAnimation" Text="Animation für AN" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%020" Name="AnimationPrio1_%C%" Offset="27" BitOffset="0" ParameterType="%AID%_PT-SLEDAnimation" Text="Animation für Prio1" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%021" Name="AnimationPrio2_%C%" Offset="31" BitOffset="0" ParameterType="%AID%_PT-SLEDAnimation" Text="Animation für Prio2" Value="0" />
+
+                
+                
               </Union>
             </Parameters>
             <ParameterRefs>
@@ -22,17 +47,39 @@
               <ParameterRef Id="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101" RefId="%AID%_UP-%TT%%CC%001" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%002_R-%TT%%CC%00201" RefId="%AID%_UP-%TT%%CC%002" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301" RefId="%AID%_UP-%TT%%CC%003" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501" RefId="%AID%_UP-%TT%%CC%005" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601" RefId="%AID%_UP-%TT%%CC%006" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%007_R-%TT%%CC%00701" RefId="%AID%_UP-%TT%%CC%007" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001" RefId="%AID%_UP-%TT%%CC%010" />
-              
+              <ParameterRef Id="%AID%_UP-%TT%%CC%011_R-%TT%%CC%01101" RefId="%AID%_UP-%TT%%CC%011" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%012_R-%TT%%CC%01201" RefId="%AID%_UP-%TT%%CC%012" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%013_R-%TT%%CC%01301" RefId="%AID%_UP-%TT%%CC%013" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%014_R-%TT%%CC%01401" RefId="%AID%_UP-%TT%%CC%014" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%015_R-%TT%%CC%01501" RefId="%AID%_UP-%TT%%CC%015" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%016_R-%TT%%CC%01601" RefId="%AID%_UP-%TT%%CC%016" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%017_R-%TT%%CC%01701" RefId="%AID%_UP-%TT%%CC%017" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%018_R-%TT%%CC%01801" RefId="%AID%_UP-%TT%%CC%018" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%019_R-%TT%%CC%01901" RefId="%AID%_UP-%TT%%CC%019" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%020_R-%TT%%CC%02001" RefId="%AID%_UP-%TT%%CC%020" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%021_R-%TT%%CC%02101" RefId="%AID%_UP-%TT%%CC%021" />
             </ParameterRefs>
             <ComObjectTable>
-              <ComObject Id="%AID%_O-%TT%%CC%001" Name="StatusLED_Switch_%C%" Number="%K0%" ObjectSize="1 Bit"  Text="" FunctionText="Schalten"               ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
-              <ComObject Id="%AID%_O-%TT%%CC%002" Name="StatusLED_Status_%C%" Number="%K1%" ObjectSize="1 Bit"  Text="" FunctionText="Status"                 ReadFlag="Enabled" WriteFlag="Disabled"  CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Enabled"  ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%001" Name="StatusLED_Switch_%C%" Number="%K0%" ObjectSize="1 Bit"  Text="StatusLED %Z%" FunctionText="Schalten" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%002" Name="StatusLED_Prio1_%C%" Number="%K1%" ObjectSize="1 Bit"  Text="StatusLED %Z%" FunctionText="Prio1" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%003" Name="StatusLED_Prio2_%C%" Number="%K2%" ObjectSize="1 Bit"  Text="StatusLED %Z%" FunctionText="Prio2" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%004" Name="StatusLED_BrightnessColor_%C%" Number="%K3%" ObjectSize="3 Bytes" Text="StatusLED %Z%" FunctionText="" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" />
+              <ComObject Id="%AID%_O-%TT%%CC%005" Name="StatusLED_Animation_%C%" Number="%K4%" ObjectSize="4 Bytes" Text="StatusLED %Z%" FunctionText="Animation" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-12-1" />
             </ComObjectTable>
             <ComObjectRefs>
-              <ComObjectRef Id="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101" RefId="%AID%_O-%TT%%CC%001" Text="StatusLED %Z%" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%002_R-%TT%%CC%00201" RefId="%AID%_O-%TT%%CC%002" Text="StatusLED %Z%" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101" RefId="%AID%_O-%TT%%CC%001" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%002_R-%TT%%CC%00201" RefId="%AID%_O-%TT%%CC%002" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%003_R-%TT%%CC%00301" RefId="%AID%_O-%TT%%CC%003" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%004_R-%TT%%CC%00401" RefId="%AID%_O-%TT%%CC%004" FunctionText="Farbe" ObjectSize="3 Bytes" DatapointType="DPST-232-600"/>
+              <ComObjectRef Id="%AID%_O-%TT%%CC%004_R-%TT%%CC%00402" RefId="%AID%_O-%TT%%CC%004" FunctionText="Helligkeit" ObjectSize="1 Byte" DatapointType="DPST-5-1"/>
+              <ComObjectRef Id="%AID%_O-%TT%%CC%005_R-%TT%%CC%00501" RefId="%AID%_O-%TT%%CC%005" />
             </ComObjectRefs>
+
+
           </Static>
           <Dynamic>
             <ChannelIndependentBlock>
@@ -45,22 +92,57 @@
                     <ParameterRefRef RefId="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" IndentLevel="1" HelpContext="Empty" />
                     <!-- Type -->
                     <ParameterRefRef RefId="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101" IndentLevel="1" HelpContext="Empty" />
-                    <choose ParamRefId="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101">
-                      <when test="2">
-                        <!-- Farben für RGB als an-aus -->
+                    <choose ParamRefId="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101"> <!-- Mode -->
+                      <when test="1"> <!-- Mode: LED-Function -->
                         <ParameterRefRef RefId="%AID%_UP-%TT%%CC%002_R-%TT%%CC%00201" IndentLevel="2" HelpContext="Empty" />
+                      </when>
+                      <when test="2"> <!-- Mode: Manual -->
                         <ParameterRefRef RefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301" IndentLevel="2" HelpContext="Empty" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301">
+                          <when test="1"> <!-- Type: Monochrome -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601" IndentLevel="2" HelpContext="Empty" />
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601"> <!-- Brightness -->
+                              <when test="0">
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%014_R-%TT%%CC%01401" IndentLevel="2" HelpContext="Empty" />
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%015_R-%TT%%CC%01501" IndentLevel="2" HelpContext="Empty" />
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%016_R-%TT%%CC%01601" IndentLevel="2" HelpContext="Empty" />
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%017_R-%TT%%CC%01701" IndentLevel="2" HelpContext="Empty" />
+                              </when>
+                              <when test="1">
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00402"/>
+                              </when>
+                            </choose>
+                          </when>
+                          <when test="2"> <!-- Type: RGB -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501" IndentLevel="2" HelpContext="Empty" />
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501"> <!-- Color -->
+                              <when test="0">
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001" IndentLevel="2" HelpContext="Empty" />
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%011_R-%TT%%CC%01101" IndentLevel="2" HelpContext="Empty" />
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%012_R-%TT%%CC%01201" IndentLevel="2" HelpContext="Empty" />
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%013_R-%TT%%CC%01301" IndentLevel="2" HelpContext="Empty" />
+                              </when>
+                              <when test="1">
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00401"/>
+                              </when>
+                            </choose>
+                          </when>
+                        </choose>
+                        <!-- Type: All -->
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%007_R-%TT%%CC%00701" IndentLevel="2" HelpContext="Empty" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%007_R-%TT%%CC%00701"> <!-- Color -->
+                          <when test="0">
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%018_R-%TT%%CC%01801" IndentLevel="2" HelpContext="Empty" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%019_R-%TT%%CC%01901" IndentLevel="2" HelpContext="Empty" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%020_R-%TT%%CC%02001" IndentLevel="2" HelpContext="Empty" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%021_R-%TT%%CC%02101" IndentLevel="2" HelpContext="Empty" />
+                          </when>
+                          <when test="1">
+                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%005_R-%TT%%CC%00501"/>
+                          </when>
+                        </choose>
                       </when>
                     </choose>
-                    <!-- Modus -->
-                    <ParameterRefRef RefId="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001" IndentLevel="1" HelpContext="%DOC%" />
-                    <choose ParamRefId="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001">
-                      <when test="1">
-                        <ComObjectRefRef RefId="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101" />
-                        <ComObjectRefRef RefId="%AID%_O-%TT%%CC%002_R-%TT%%CC%00201" />
-                      </when>
-                    </choose>
-
                   </ParameterBlock>
                 </when>
               </choose>
