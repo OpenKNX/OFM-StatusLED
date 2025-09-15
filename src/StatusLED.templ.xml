@@ -17,11 +17,9 @@
 
                 <Parameter Id="%AID%_UP-%TT%%CC%003" Name="Type_%C%" Offset="0" BitOffset="4" ParameterType="%AID%_PT-SLEDType" Text="LED-Typ" Value="%SLEDdefaultType%C%%" />
 
-                <Parameter Id="%AID%_UP-%TT%%CC%005" Name="ColorManual_%C%" Offset="1" BitOffset="4" ParameterType="%AID%_PT-OnOffYesNo" Text="Farbe per KO steuern" Value="0" />
-                <Parameter Id="%AID%_UP-%TT%%CC%006" Name="BrightnessManual_%C%" Offset="1" BitOffset="5" ParameterType="%AID%_PT-OnOffYesNo" Text="Helligkeit per KO steuern" Value="0" />
-                <Parameter Id="%AID%_UP-%TT%%CC%007" Name="AnimationManual_%C%" Offset="1" BitOffset="6" ParameterType="%AID%_PT-OnOffYesNo" Text="Animation per KO steuern" Value="0" />
-
-
+                <Parameter Id="%AID%_UP-%TT%%CC%004" Name="DetailedControl_%C%" Offset="1" BitOffset="4" ParameterType="%AID%_PT-SLEDKoControlType" Text="Art der KO Steuerung" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%005" Name="Prio1Active_%C%" Offset="1" BitOffset="5" ParameterType="%AID%_PT-OnOffYesNo" Text="Prio1 aktiv" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%006" Name="Prio2Active_%C%" Offset="1" BitOffset="6" ParameterType="%AID%_PT-OnOffYesNo" Text="Prio2 aktiv" Value="0" />
 
                 <Parameter Id="%AID%_UP-%TT%%CC%010" Name="ColorOff_%C%" Offset="3" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für AUS" Value="#000000" />
                 <Parameter Id="%AID%_UP-%TT%%CC%011" Name="ColorOn_%C%" Offset="6" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für AN" Value="#00FF00"/>
@@ -38,8 +36,6 @@
                 <Parameter Id="%AID%_UP-%TT%%CC%020" Name="AnimationPrio1_%C%" Offset="27" BitOffset="0" ParameterType="%AID%_PT-SLEDAnimation" Text="Animation für Prio1" Value="0" />
                 <Parameter Id="%AID%_UP-%TT%%CC%021" Name="AnimationPrio2_%C%" Offset="31" BitOffset="0" ParameterType="%AID%_PT-SLEDAnimation" Text="Animation für Prio2" Value="0" />
 
-                
-                
               </Union>
             </Parameters>
             <ParameterRefs>
@@ -47,9 +43,9 @@
               <ParameterRef Id="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101" RefId="%AID%_UP-%TT%%CC%001" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%002_R-%TT%%CC%00201" RefId="%AID%_UP-%TT%%CC%002" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301" RefId="%AID%_UP-%TT%%CC%003" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%004_R-%TT%%CC%00401" RefId="%AID%_UP-%TT%%CC%004" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501" RefId="%AID%_UP-%TT%%CC%005" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601" RefId="%AID%_UP-%TT%%CC%006" />
-              <ParameterRef Id="%AID%_UP-%TT%%CC%007_R-%TT%%CC%00701" RefId="%AID%_UP-%TT%%CC%007" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001" RefId="%AID%_UP-%TT%%CC%010" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%011_R-%TT%%CC%01101" RefId="%AID%_UP-%TT%%CC%011" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%012_R-%TT%%CC%01201" RefId="%AID%_UP-%TT%%CC%012" />
@@ -78,8 +74,6 @@
               <ComObjectRef Id="%AID%_O-%TT%%CC%004_R-%TT%%CC%00402" RefId="%AID%_O-%TT%%CC%004" FunctionText="Helligkeit" ObjectSize="1 Byte" DatapointType="DPST-5-1"/>
               <ComObjectRef Id="%AID%_O-%TT%%CC%005_R-%TT%%CC%00501" RefId="%AID%_O-%TT%%CC%005" />
             </ComObjectRefs>
-
-
           </Static>
           <Dynamic>
             <ChannelIndependentBlock>
@@ -91,54 +85,84 @@
                     <!-- Name -->
                     <ParameterRefRef RefId="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" IndentLevel="1" HelpContext="Empty" />
                     <!-- Type -->
-                    <ParameterRefRef RefId="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101" IndentLevel="1" HelpContext="Empty" />
+                    <ParameterRefRef RefId="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101" IndentLevel="1" HelpContext="Empty" /> <!-- Mode -->
                     <choose ParamRefId="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101"> <!-- Mode -->
                       <when test="1"> <!-- Mode: LED-Function -->
-                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%002_R-%TT%%CC%00201" IndentLevel="2" HelpContext="Empty" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%002_R-%TT%%CC%00201" IndentLevel="2" HelpContext="Empty" /> <!-- LED-Function -->
                       </when>
                       <when test="2"> <!-- Mode: Manual -->
-                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301" IndentLevel="2" HelpContext="Empty" />
-                        <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301">
-                          <when test="1"> <!-- Type: Monochrome -->
-                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601" IndentLevel="2" HelpContext="Empty" />
-                            <choose ParamRefId="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601"> <!-- Brightness -->
-                              <when test="0">
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%014_R-%TT%%CC%01401" IndentLevel="2" HelpContext="Empty" />
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%015_R-%TT%%CC%01501" IndentLevel="2" HelpContext="Empty" />
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%016_R-%TT%%CC%01601" IndentLevel="2" HelpContext="Empty" />
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%017_R-%TT%%CC%01701" IndentLevel="2" HelpContext="Empty" />
+                        <ComObjectRefRef RefId="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101"/> <!-- KO Switch -->
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301" IndentLevel="2" HelpContext="Empty" /> <!-- Type -->
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Einstellung für AN/AUS" UIHint="Headline" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%004_R-%TT%%CC%00401" IndentLevel="2" HelpContext="Empty" /> <!-- Detailed-KO-->
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%004_R-%TT%%CC%00401"> <!-- Detailed-KO-->
+                          <when test="0"> <!-- Detailed-KO: ETS-->
+                            <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                              <when test="1"> <!-- Type: Monochrom -->
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%014_R-%TT%%CC%01401" IndentLevel="3" HelpContext="Empty" /> <!-- Brightness: Off -->
                               </when>
-                              <when test="1">
-                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00402"/>
+                              <when test="2"> <!-- Type: RGB -->
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001" IndentLevel="3" HelpContext="Empty" /> <!-- Color: Off -->
                               </when>
                             </choose>
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%018_R-%TT%%CC%01801" IndentLevel="3" HelpContext="Empty" /> <!-- Animation: Off -->
+                            <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                              <when test="1"> <!-- Type: Monochrom -->
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%015_R-%TT%%CC%01501" IndentLevel="3" HelpContext="Empty" /> <!-- Brightness: On -->
+                              </when>
+                              <when test="2"> <!-- Type: RGB -->
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%011_R-%TT%%CC%01101" IndentLevel="3" HelpContext="Empty" /> <!-- Color: On -->
+                              </when>
+                            </choose>
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%019_R-%TT%%CC%01901" IndentLevel="3" HelpContext="Empty" /> <!-- Animation: On -->
                           </when>
-                          <when test="2"> <!-- Type: RGB -->
-                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501" IndentLevel="2" HelpContext="Empty" />
-                            <choose ParamRefId="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501"> <!-- Color -->
-                              <when test="0">
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001" IndentLevel="2" HelpContext="Empty" />
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%011_R-%TT%%CC%01101" IndentLevel="2" HelpContext="Empty" />
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%012_R-%TT%%CC%01201" IndentLevel="2" HelpContext="Empty" />
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%013_R-%TT%%CC%01301" IndentLevel="2" HelpContext="Empty" />
+                          <when test="1"> <!-- Detailed-KO: KO-->
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                              <when test="1"> <!-- Type: Monochrom -->
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00402"/> <!-- KO Brightness -->
                               </when>
-                              <when test="1">
-                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00401"/>
+                              <when test="2"> <!-- Type: RGB -->
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00401"/> <!-- KO Color -->
                               </when>
                             </choose>
+                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%005_R-%TT%%CC%00501"/> <!-- KO Animation -->
                           </when>
                         </choose>
-                        <!-- Type: All -->
-                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%007_R-%TT%%CC%00701" IndentLevel="2" HelpContext="Empty" />
-                        <choose ParamRefId="%AID%_UP-%TT%%CC%007_R-%TT%%CC%00701"> <!-- Color -->
-                          <when test="0">
-                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%018_R-%TT%%CC%01801" IndentLevel="2" HelpContext="Empty" />
-                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%019_R-%TT%%CC%01901" IndentLevel="2" HelpContext="Empty" />
-                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%020_R-%TT%%CC%02001" IndentLevel="2" HelpContext="Empty" />
-                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%021_R-%TT%%CC%02101" IndentLevel="2" HelpContext="Empty" />
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Prio1" UIHint="Headline" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501" IndentLevel="2" HelpContext="Empty" /> <!-- Prio1Active -->
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501"> <!-- Prio1Active -->
+                          <when test="1"> <!-- Prio1Active: Yes-->
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                              <when test="1"> <!-- Type: Monochrom -->
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%016_R-%TT%%CC%01601" IndentLevel="3" HelpContext="Empty" /> <!-- Brightness: Prio1 -->
+                              </when>
+                              <when test="2"> <!-- Type: RGB -->
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%012_R-%TT%%CC%01201" IndentLevel="3" HelpContext="Empty" /> <!-- Color: Prio1 -->
+                              </when>
+                            </choose>
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%020_R-%TT%%CC%02001" IndentLevel="3" HelpContext="Empty" /> <!-- Animation: Prio1 -->
+                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%002_R-%TT%%CC%00201"/> <!-- KO Prio1 -->
                           </when>
-                          <when test="1">
-                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%005_R-%TT%%CC%00501"/>
+                        </choose>
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Prio2" UIHint="Headline" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601" IndentLevel="2" HelpContext="Empty" /> <!-- Prio2Active -->
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601"> <!-- Prio2Active -->
+                          <when test="1"> <!-- Prio2Active: Yes-->
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                              <when test="1"> <!-- Type: Monochrom -->
+                               <ParameterRefRef RefId="%AID%_UP-%TT%%CC%017_R-%TT%%CC%01701" IndentLevel="3" HelpContext="Empty" /> <!-- Brightness: Prio2 -->
+                              </when>
+                              <when test="2"> <!-- Type: RGB -->
+                               <ParameterRefRef RefId="%AID%_UP-%TT%%CC%013_R-%TT%%CC%01301" IndentLevel="3" HelpContext="Empty" /> <!-- Color: Prio2 -->
+                              </when>
+                            </choose>
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%021_R-%TT%%CC%02101" IndentLevel="3" HelpContext="Empty" /> <!-- Animation: Prio2 -->
+                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%003_R-%TT%%CC%00301"/> <!-- KO Prio2 -->
                           </when>
                         </choose>
                       </when>

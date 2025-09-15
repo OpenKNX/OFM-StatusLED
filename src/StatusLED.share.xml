@@ -30,6 +30,15 @@
                   <Enumeration Text="Pulsieren" Value="2" Id="%ENID%" />
                 </TypeRestriction>
               </ParameterType>
+              <ParameterType Id="%AID%_PT-SLEDKoControlType" Name="SLEDKoControlType">
+                <TypeRestriction Base="Value" SizeInBit="1">
+                  <Enumeration Text="An/Aus mit vordefinierten Zuständen" Value="0" Id="%ENID%"/>
+                  <Enumeration Text="freie Steuerung" Value="1" Id="%ENID%"/>
+                </TypeRestriction>
+              </ParameterType>
+
+
+              SLEDKoControlType
             </ParameterTypes>
 
             <Parameters>
