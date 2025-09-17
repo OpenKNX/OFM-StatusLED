@@ -35,44 +35,16 @@ void StatusLEDChannel::loop()
 }
 void StatusLEDChannel::processInputKo(GroupObject &ko)
 {
-    /*
-    if (ParamSLED_bMode == 0)
+    if(ParamSLED_Mode_ == 0 || _led == nullptr)
         return;
 
     uint16_t koNumber = ko.asap();
     int8_t koIndex = SLED_KoCalcIndex(koNumber);
-    // logInfoP("koNumber %i -> koIndex %i", koNumber, koIndex);
-
-    // External KO -> to Channel Mapping
-    if (_buttonParams[0].inputKo > 0 && _buttonParams[0].inputKo == koNumber)
-    {
-        koIndex = SLED_KoIn1;
-    }
-    else if (_buttonParams[1].inputKo > 0 && _buttonParams[1].inputKo == koNumber)
-    {
-        koIndex = SLED_KoIn2;
-    }
 
     switch (koIndex)
     {
-        case SLED_KoIn1:
-            processInputKoInput(ko, 0);
-            break;
-        case SLED_KoIn2:
-            processInputKoInput(ko, 1);
-            break;
-        case SLED_KoLock:
-            processInputKoLock(ko);
-            break;
-        case SLED_KoOut1Status:
-            processInputKoStatus(ko, 1, ParamSLED_bOutShort_DPT, _statusShort);
-            break;
-        case SLED_KoOut2Status:
-            processInputKoStatus(ko, 2, ParamSLED_bOutLong_DPT, _statusLong);
-            break;
-        case SLED_KoOut3Status:
-            processInputKoStatus(ko, 3, ParamSLED_bOutExtraLong_DPT, _statusExtraLong);
+        case SLED_KoStatusLED_Switch_:
+            _led->on(ko.value(DPT_Switch));
             break;
     }
-    */
 }
