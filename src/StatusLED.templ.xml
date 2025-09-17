@@ -17,9 +17,9 @@
 
                 <Parameter Id="%AID%_UP-%TT%%CC%003" Name="Type_%C%" Offset="0" BitOffset="4" ParameterType="%AID%_PT-SLEDType" Text="LED-Typ" Value="%SLEDdefaultType%C%%" />
 
-                <Parameter Id="%AID%_UP-%TT%%CC%004" Name="DetailedControl_%C%" Offset="1" BitOffset="4" ParameterType="%AID%_PT-SLEDKoControlType" Text="Art der KO Steuerung" Value="0" />
-                <Parameter Id="%AID%_UP-%TT%%CC%005" Name="Prio1Active_%C%" Offset="1" BitOffset="5" ParameterType="%AID%_PT-OnOffYesNo" Text="Prio1 aktiv" Value="0" />
-                <Parameter Id="%AID%_UP-%TT%%CC%006" Name="Prio2Active_%C%" Offset="1" BitOffset="6" ParameterType="%AID%_PT-OnOffYesNo" Text="Prio2 aktiv" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%004" Name="DetailedControl_%C%" Offset="2" BitOffset="0" ParameterType="%AID%_PT-SLEDKoControlType" Text="Erweiterte KOs" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%005" Name="Prio1Active_%C%" Offset="1" BitOffset="4" ParameterType="%AID%_PT-SLEDPrioControl" Text="Prio1 aktiv" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%006" Name="Prio2Active_%C%" Offset="1" BitOffset="6" ParameterType="%AID%_PT-SLEDPrioControl" Text="Prio2 aktiv" Value="0" />
 
                 <Parameter Id="%AID%_UP-%TT%%CC%010" Name="ColorOff_%C%" Offset="3" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für AUS" Value="#000000" />
                 <Parameter Id="%AID%_UP-%TT%%CC%011" Name="ColorOn_%C%" Offset="6" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für AN" Value="#00FF00"/>
@@ -31,10 +31,10 @@
                 <Parameter Id="%AID%_UP-%TT%%CC%016" Name="BrightnessPrio1_%C%" Offset="17" BitOffset="0" ParameterType="%AID%_PT-Percent" Text="Helligkeit für Prio1" Value="100" />
                 <Parameter Id="%AID%_UP-%TT%%CC%017" Name="BrightnessPrio2_%C%" Offset="18" BitOffset="0" ParameterType="%AID%_PT-Percent" Text="Helligkeit für Prio2" Value="100" />
 
-                <Parameter Id="%AID%_UP-%TT%%CC%018" Name="AnimationOff_%C%" Offset="19" BitOffset="0" ParameterType="%AID%_PT-SLEDAnimation" Text="Animation für AUS" Value="0" />
-                <Parameter Id="%AID%_UP-%TT%%CC%019" Name="AnimationOn_%C%" Offset="23" BitOffset="0" ParameterType="%AID%_PT-SLEDAnimation" Text="Animation für AN" Value="0" />
-                <Parameter Id="%AID%_UP-%TT%%CC%020" Name="AnimationPrio1_%C%" Offset="27" BitOffset="0" ParameterType="%AID%_PT-SLEDAnimation" Text="Animation für Prio1" Value="0" />
-                <Parameter Id="%AID%_UP-%TT%%CC%021" Name="AnimationPrio2_%C%" Offset="31" BitOffset="0" ParameterType="%AID%_PT-SLEDAnimation" Text="Animation für Prio2" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%018" Name="EffectOff_%C%" Offset="19" BitOffset="0" ParameterType="%AID%_PT-SLEDEffect" Text="Effekt für AUS" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%019" Name="EffectOn_%C%" Offset="23" BitOffset="0" ParameterType="%AID%_PT-SLEDEffect" Text="Effekt für AN" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%020" Name="EffectPrio1_%C%" Offset="27" BitOffset="0" ParameterType="%AID%_PT-SLEDEffect" Text="Effekt für Prio1" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%021" Name="EffectPrio2_%C%" Offset="31" BitOffset="0" ParameterType="%AID%_PT-SLEDEffect" Text="Effekt für Prio2" Value="0" />
 
               </Union>
             </Parameters>
@@ -64,7 +64,7 @@
               <ComObject Id="%AID%_O-%TT%%CC%002" Name="StatusLED_Prio1_%C%" Number="%K1%" ObjectSize="1 Bit"  Text="StatusLED %Z%" FunctionText="Prio1" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
               <ComObject Id="%AID%_O-%TT%%CC%003" Name="StatusLED_Prio2_%C%" Number="%K2%" ObjectSize="1 Bit"  Text="StatusLED %Z%" FunctionText="Prio2" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
               <ComObject Id="%AID%_O-%TT%%CC%004" Name="StatusLED_BrightnessColor_%C%" Number="%K3%" ObjectSize="3 Bytes" Text="StatusLED %Z%" FunctionText="" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" />
-              <ComObject Id="%AID%_O-%TT%%CC%005" Name="StatusLED_Animation_%C%" Number="%K4%" ObjectSize="4 Bytes" Text="StatusLED %Z%" FunctionText="Animation" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-12-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%005" Name="StatusLED_Effect_%C%" Number="%K4%" ObjectSize="4 Bytes" Text="StatusLED %Z%" FunctionText="Effekt" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-12-1" />
             </ComObjectTable>
             <ComObjectRefs>
               <ComObjectRef Id="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101" RefId="%AID%_O-%TT%%CC%001" />
@@ -94,48 +94,31 @@
                         <ComObjectRefRef RefId="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101"/> <!-- KO Switch -->
                         <ParameterRefRef RefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301" IndentLevel="2" HelpContext="Empty" /> <!-- Type -->
                         <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
-                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Einstellung für AN/AUS" UIHint="Headline" />
-                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%004_R-%TT%%CC%00401" IndentLevel="2" HelpContext="Empty" /> <!-- Detailed-KO-->
-                        <choose ParamRefId="%AID%_UP-%TT%%CC%004_R-%TT%%CC%00401"> <!-- Detailed-KO-->
-                          <when test="0"> <!-- Detailed-KO: ETS-->
-                            <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
-                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
-                              <when test="1"> <!-- Type: Monochrom -->
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%014_R-%TT%%CC%01401" IndentLevel="3" HelpContext="Empty" /> <!-- Brightness: Off -->
-                              </when>
-                              <when test="2"> <!-- Type: RGB -->
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001" IndentLevel="3" HelpContext="Empty" /> <!-- Color: Off -->
-                              </when>
-                            </choose>
-                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%018_R-%TT%%CC%01801" IndentLevel="3" HelpContext="Empty" /> <!-- Animation: Off -->
-                            <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
-                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
-                              <when test="1"> <!-- Type: Monochrom -->
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%015_R-%TT%%CC%01501" IndentLevel="3" HelpContext="Empty" /> <!-- Brightness: On -->
-                              </when>
-                              <when test="2"> <!-- Type: RGB -->
-                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%011_R-%TT%%CC%01101" IndentLevel="3" HelpContext="Empty" /> <!-- Color: On -->
-                              </when>
-                            </choose>
-                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%019_R-%TT%%CC%01901" IndentLevel="3" HelpContext="Empty" /> <!-- Animation: On -->
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Schalten (AN/AUS)" UIHint="Headline" />
+
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                          <when test="1"> <!-- Type: Monochrom -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%014_R-%TT%%CC%01401" IndentLevel="3" HelpContext="Empty" /> <!-- Brightness: Off -->
                           </when>
-                          <when test="1"> <!-- Detailed-KO: KO-->
-                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
-                              <when test="1"> <!-- Type: Monochrom -->
-                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00402"/> <!-- KO Brightness -->
-                              </when>
-                              <when test="2"> <!-- Type: RGB -->
-                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00401"/> <!-- KO Color -->
-                              </when>
-                            </choose>
-                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%005_R-%TT%%CC%00501"/> <!-- KO Animation -->
+                          <when test="2"> <!-- Type: RGB -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001" IndentLevel="3" HelpContext="Empty" /> <!-- Color: Off -->
                           </when>
                         </choose>
-                        <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%018_R-%TT%%CC%01801" IndentLevel="3" HelpContext="Empty" /> <!-- Effect: Off -->
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                          <when test="1"> <!-- Type: Monochrom -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%015_R-%TT%%CC%01501" IndentLevel="3" HelpContext="Empty" /> <!-- Brightness: On -->
+                          </when>
+                          <when test="2"> <!-- Type: RGB -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%011_R-%TT%%CC%01101" IndentLevel="3" HelpContext="Empty" /> <!-- Color: On -->
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%019_R-%TT%%CC%01901" IndentLevel="3" HelpContext="Empty" /> <!-- Effect: On -->
+
                         <ParameterSeparator Id="%AID%_PS-nnn" Text="Prio1" UIHint="Headline" />
                         <ParameterRefRef RefId="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501" IndentLevel="2" HelpContext="Empty" /> <!-- Prio1Active -->
                         <choose ParamRefId="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501"> <!-- Prio1Active -->
-                          <when test="1"> <!-- Prio1Active: Yes-->
+                          <when test="!=0"> <!-- Prio1Active: Yes-->
                             <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
                               <when test="1"> <!-- Type: Monochrom -->
                                 <ParameterRefRef RefId="%AID%_UP-%TT%%CC%016_R-%TT%%CC%01601" IndentLevel="3" HelpContext="Empty" /> <!-- Brightness: Prio1 -->
@@ -144,15 +127,14 @@
                                 <ParameterRefRef RefId="%AID%_UP-%TT%%CC%012_R-%TT%%CC%01201" IndentLevel="3" HelpContext="Empty" /> <!-- Color: Prio1 -->
                               </when>
                             </choose>
-                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%020_R-%TT%%CC%02001" IndentLevel="3" HelpContext="Empty" /> <!-- Animation: Prio1 -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%020_R-%TT%%CC%02001" IndentLevel="3" HelpContext="Empty" /> <!-- Effect: Prio1 -->
                             <ComObjectRefRef RefId="%AID%_O-%TT%%CC%002_R-%TT%%CC%00201"/> <!-- KO Prio1 -->
                           </when>
                         </choose>
-                        <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
                         <ParameterSeparator Id="%AID%_PS-nnn" Text="Prio2" UIHint="Headline" />
                         <ParameterRefRef RefId="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601" IndentLevel="2" HelpContext="Empty" /> <!-- Prio2Active -->
                         <choose ParamRefId="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601"> <!-- Prio2Active -->
-                          <when test="1"> <!-- Prio2Active: Yes-->
+                          <when test="!=0"> <!-- Prio2Active: Yes-->
                             <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
                               <when test="1"> <!-- Type: Monochrom -->
                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%017_R-%TT%%CC%01701" IndentLevel="3" HelpContext="Empty" /> <!-- Brightness: Prio2 -->
@@ -161,10 +143,26 @@
                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%013_R-%TT%%CC%01301" IndentLevel="3" HelpContext="Empty" /> <!-- Color: Prio2 -->
                               </when>
                             </choose>
-                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%021_R-%TT%%CC%02101" IndentLevel="3" HelpContext="Empty" /> <!-- Animation: Prio2 -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%021_R-%TT%%CC%02101" IndentLevel="3" HelpContext="Empty" /> <!-- Effect: Prio2 -->
                             <ComObjectRefRef RefId="%AID%_O-%TT%%CC%003_R-%TT%%CC%00301"/> <!-- KO Prio2 -->
                           </when>
                         </choose>
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Erweiterte KO Steuerung (Farbe / Helligkeit / Effekt)" UIHint="Headline" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%004_R-%TT%%CC%00401" IndentLevel="2" HelpContext="Empty" /> <!-- KO-Control -->
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%004_R-%TT%%CC%00401"> <!-- Detailed-KO-->
+                          <when test="!=0">
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                              <when test="1"> <!-- Type: Monochrom -->
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00402"/> <!-- KO Brightness -->
+                              </when>
+                              <when test="2"> <!-- Type: RGB -->
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00401"/> <!-- KO Color -->
+                              </when>
+                            </choose>
+                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%005_R-%TT%%CC%00501"/> <!-- KO Effekt -->
+                          </when>
+                        </choose>
+
                       </when>
                     </choose>
                   </ParameterBlock>

@@ -5,7 +5,8 @@ class StatusLEDChannel : public OpenKNX::Channel
 {
 
   private:
-
+    OpenKNX::Led::Base* _led = nullptr;
+    uint16_t _ledNumber = 0;
 
   public:
     StatusLEDChannel(uint8_t index);

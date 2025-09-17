@@ -23,20 +23,27 @@
                   <Enumeration Text="Steuerung über KO" Value="2" Id="%ENID%" DisplayOrder="2"/>
                 </TypeRestriction>
               </ParameterType>
-              <ParameterType Id="%AID%_PT-SLEDAnimation" Name="SLEDAnimation">
+              <ParameterType Id="%AID%_PT-SLEDEffect" Name="SLEDEffect">
                 <TypeRestriction Base="Value" SizeInBit="32" UIHint="DropDown">
-                  <Enumeration Text="keine Animation" Value="0" Id="%ENID%" />
+                  <Enumeration Text="kein Effekt" Value="0" Id="%ENID%" />
                   <Enumeration Text="Blinken" Value="1" Id="%ENID%" />
                   <Enumeration Text="Pulsieren" Value="2" Id="%ENID%" />
                 </TypeRestriction>
               </ParameterType>
               <ParameterType Id="%AID%_PT-SLEDKoControlType" Name="SLEDKoControlType">
-                <TypeRestriction Base="Value" SizeInBit="1">
-                  <Enumeration Text="An/Aus mit vordefinierten Zuständen" Value="0" Id="%ENID%"/>
-                  <Enumeration Text="freie Steuerung" Value="1" Id="%ENID%"/>
+                <TypeRestriction Base="Value" SizeInBit="2">
+                  <Enumeration Text="Deaktiviert" Value="0" Id="%ENID%"/>
+                  <Enumeration Text="ändern den Zustand AN" Value="1" Id="%ENID%"/>
+                  <Enumeration Text="ändern direkt die LED" Value="3" Id="%ENID%"/>
                 </TypeRestriction>
               </ParameterType>
-
+              <ParameterType Id="%AID%_PT-SLEDPrioControl" Name="SLEDPrioControl">
+                <TypeRestriction Base="Value" SizeInBit="2">
+                  <Enumeration Text="Deaktiviert" Value="0" Id="%ENID%"/>
+                  <Enumeration Text="aktiv bei 1" Value="1" Id="%ENID%"/>
+                  <Enumeration Text="aktiv bei 0" Value="3" Id="%ENID%"/>
+                </TypeRestriction>
+              </ParameterType>
 
               SLEDKoControlType
             </ParameterTypes>
