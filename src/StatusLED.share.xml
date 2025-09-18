@@ -2,6 +2,27 @@
 <?xml-model href="../../Organization/knxprod-support/knx_project_14/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <KNX xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" xmlns="http://knx.org/xml/project/14" CreatedBy="KNX MT" ToolVersion="5.1.255.16695">
   <op:config name="%SLED_NumChannelsDefault%" value="%N%" />
+
+  <op:config name="%SLEDdefaultName1%" value=""></op:config>
+  <op:config name="%SLEDdefaultMode1%" value="1"></op:config>
+  <op:config name="%SLEDdefaultFunc1%" value="0"></op:config>
+  <op:config name="%SLEDdefaultType1%" value="1"></op:config>
+
+  <op:config name="%SLEDdefaultName2%" value=""></op:config>
+  <op:config name="%SLEDdefaultMode2%" value="1"></op:config>
+  <op:config name="%SLEDdefaultFunc2%" value="0"></op:config>
+  <op:config name="%SLEDdefaultType2%" value="1"></op:config>
+
+  <op:config name="%SLEDdefaultName3%" value=""></op:config>
+  <op:config name="%SLEDdefaultMode3%" value="1"></op:config>
+  <op:config name="%SLEDdefaultFunc3%" value="0"></op:config>
+  <op:config name="%SLEDdefaultType3%" value="1"></op:config>
+
+  <op:config name="%SLEDdefaultName4%" value=""></op:config>
+  <op:config name="%SLEDdefaultMode4%" value="1"></op:config>
+  <op:config name="%SLEDdefaultFunc4%" value="0"></op:config>
+  <op:config name="%SLEDdefaultType4%" value="1"></op:config>
+
   <ManufacturerData>
     <Manufacturer>
       <ApplicationPrograms>
