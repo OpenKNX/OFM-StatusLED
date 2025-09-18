@@ -15,7 +15,7 @@ void StatusLEDModule::setup()
 {
     for (uint8_t i = 0; i < ParamSLED_VisibleChannels; i++)
     {
-        _channels[i] = new StatusLEDChannel(i);
+        _channels[i] = new StatusLEDChannel(i, _ledIds[i]);
         _channels[i]->setup();
     }
 }

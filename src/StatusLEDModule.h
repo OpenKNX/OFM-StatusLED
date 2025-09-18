@@ -14,6 +14,7 @@ class StatusLEDModule : public OpenKNX::Module
 
   private:
     uint8_t _currentChannel = 0;
+    uint8_t _ledIds[SLED_ChannelCount] = {OPENKNX_SLED_IDs};
     StatusLEDChannel* _channels[SLED_ChannelCount];
 };
 
