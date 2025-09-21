@@ -9,7 +9,7 @@
             <Parameters>
               <Parameter Id="%AID%_P-%TT%%CC%000" Name="Name_%C%" ParameterType="%AID%_PT-Text40Byte" Text="Beschreibung" Value="%SLEDdefaultName%C%%" />
 
-              <Union SizeInBit="16">
+              <Union SizeInBit="320">
                 <Memory CodeSegment="%AID%_RS-04-00000" Offset="0" BitOffset="0" />
                 <Parameter Id="%AID%_UP-%TT%%CC%001" Name="Mode_%C%" Offset="0" BitOffset="0" ParameterType="%AID%_PT-SLEDMode" Text="Betriebsmodus" Value="%SLEDdefaultMode%C%%" />
 
