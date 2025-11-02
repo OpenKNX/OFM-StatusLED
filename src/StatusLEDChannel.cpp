@@ -2,7 +2,7 @@
 
 StatusLEDChannel::StatusLEDChannel(uint8_t index, uint8_t ledId)
 {
-    _led = openknx.leds.getLed(ledId);
+    _led = openknx.leds.getLed(ledId); // check
     _channelIndex = index;
 }
 
@@ -15,7 +15,7 @@ void StatusLEDChannel::setup()
 {
     if(ParamSLED_Mode_ == 1)
     { // LED-Funnction
-        openknx.ledFunctions.AssignLed2Function(_led, ParamSLED_Func_);
+        openknx.ledFunctions.assignLed2Function(_led, ParamSLED_Func_);
     }
     else if(ParamSLED_Mode_ == 2)
     { // GO Control
