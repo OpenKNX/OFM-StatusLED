@@ -54,8 +54,9 @@ void StatusLEDChannel::processInputKo(GroupObject &ko)
             processSwitchInputKo();
             break;
         case SLED_KoStatusLED_BrightnessColor_:
+            processBrightnessColorInputKo();
         case SLED_KoStatusLED_Effect_:
-            processDetailedInputKo();
+            processEffectInputKo();
     }
 }
 
@@ -181,7 +182,7 @@ void StatusLEDChannel::processSwitchInputKo()
     }
 }
 
-void StatusLEDChannel::processDetailedInputKo()
+void StatusLEDChannel::processBrightnessColorInputKo()
 {
     if(ParamSLED_DetailedControl_ == 1)
     {
@@ -197,6 +198,17 @@ void StatusLEDChannel::processDetailedInputKo()
         {
             _led->brightness(KoSLED_StatusLED_BrightnessColor_.value(DPT_Scaling));
         }
+    }
+}
+
+void StatusLEDChannel::processEffectInputKo()
+{
+    if(ParamSLED_DetailedControl_ == 1)
+    {
+        processSwitchInputKo();
+    }
+    else if(ParamSLED_DetailedControl_ == 3)
+    {
         switch ((uint32_t)KoSLED_StatusLED_Effect_.value(DPT_Value_4_Ucount))
         {
             case 0:
@@ -212,7 +224,4 @@ void StatusLEDChannel::processDetailedInputKo()
                 _led->off();
         }
     }
-    
-    
-
 }

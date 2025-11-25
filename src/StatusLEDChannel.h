@@ -8,7 +8,8 @@ class StatusLEDChannel : public OpenKNX::Channel
     OpenKNX::Led::Base* _led = nullptr;
     uint16_t _ledNumber = 0;
     void processSwitchInputKo();
-    void processDetailedInputKo();
+    void processBrightnessColorInputKo();
+    void processEffectInputKo();
 
   public:
     StatusLEDChannel(uint8_t index, uint8_t ledId);
