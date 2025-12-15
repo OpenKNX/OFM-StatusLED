@@ -65,9 +65,9 @@ void StatusLEDChannel::processSwitchInputKo()
     if(KoSLED_StatusLED_Prio2_.value(DPT_Switch))
     {
         // Prio2
-        if(_led->isRGB())
+        if(_led->isColor())
         {
-            ((OpenKNX::Led::RGB*)_led)->setColor(ParamSLED_ColorPrio2_);
+            ((OpenKNX::Led::RGB*)_led)->color(ParamSLED_ColorPrio2_);
         }
         else
         {
@@ -91,9 +91,9 @@ void StatusLEDChannel::processSwitchInputKo()
     else if(KoSLED_StatusLED_Prio1_.value(DPT_Switch))
     {
         // Prio1
-        if(_led->isRGB())
+        if(_led->isColor())
         {
-            ((OpenKNX::Led::RGB*)_led)->setColor(ParamSLED_ColorPrio1_);
+            ((OpenKNX::Led::RGB*)_led)->color(ParamSLED_ColorPrio1_);
         }
         else
         {
@@ -117,15 +117,15 @@ void StatusLEDChannel::processSwitchInputKo()
     else if(KoSLED_StatusLED_Switch_.value(DPT_Switch))
     {
         // On
-        if(_led->isRGB())
+        if(_led->isColor())
         {
             if(ParamSLED_DetailedControl_ == 1) // Details KO Control mode 1
             {
-                ((OpenKNX::Led::RGB*)_led)->setColor(KoSLED_StatusLED_BrightnessColor_.value(DPT_Colour_RGB));
+                ((OpenKNX::Led::RGB*)_led)->color(KoSLED_StatusLED_BrightnessColor_.value(DPT_Colour_RGB));
             }
             else
             {
-                ((OpenKNX::Led::RGB*)_led)->setColor(ParamSLED_ColorOn_);
+                ((OpenKNX::Led::RGB*)_led)->color(ParamSLED_ColorOn_);
             }
         }
         else
@@ -157,9 +157,9 @@ void StatusLEDChannel::processSwitchInputKo()
     else
     {
         // Off
-        if(_led->isRGB())
+        if(_led->isColor())
         {
-            ((OpenKNX::Led::RGB*)_led)->setColor(ParamSLED_ColorOff_);
+            ((OpenKNX::Led::RGB*)_led)->color(ParamSLED_ColorOff_);
         }
         else
         {
@@ -190,9 +190,9 @@ void StatusLEDChannel::processBrightnessColorInputKo()
     }
     else if(ParamSLED_DetailedControl_ == 3)
     {
-        if(_led->isRGB())
+        if(_led->isColor())
         {
-            ((OpenKNX::Led::RGB*)_led)->setColor(KoSLED_StatusLED_BrightnessColor_.value(DPT_Colour_RGB));
+            ((OpenKNX::Led::RGB*)_led)->color(KoSLED_StatusLED_BrightnessColor_.value(DPT_Colour_RGB));
         }
         else
         {
