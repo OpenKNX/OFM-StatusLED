@@ -84,15 +84,15 @@
                     <ParameterSeparator Id="%AID%_PS-nnn" Text="Konfiguration" UIHint="Headline" />
                     <!-- Name -->
                     <ParameterRefRef RefId="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" IndentLevel="1" HelpContext="Empty" />
-                    <!-- Type -->
-                    <ParameterRefRef RefId="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101" IndentLevel="1" HelpContext="Empty" /> <!-- Mode -->
+                    <!-- Mode -->
+                    <ParameterRefRef RefId="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101" IndentLevel="1" HelpContext="SLED-Modus" /> <!-- Mode -->
                     <choose ParamRefId="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101"> <!-- Mode -->
                       <when test="1"> <!-- Mode: LED-Function -->
-                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%002_R-%TT%%CC%00201" IndentLevel="2" HelpContext="Empty" /> <!-- LED-Function -->
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%002_R-%TT%%CC%00201" IndentLevel="2" HelpContext="SLED-LED-Funktion" /> <!-- LED-Function -->
                       </when>
                       <when test="2"> <!-- Mode: Manual -->
                         <ComObjectRefRef RefId="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101"/> <!-- KO Switch -->
-                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301" IndentLevel="2" HelpContext="Empty" /> <!-- Type -->
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301" IndentLevel="2" HelpContext="SLED-LED-Typ" /> <!-- Type -->
                         <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
                         <ParameterSeparator Id="%AID%_PS-nnn" Text="Schalten (AN/AUS)" UIHint="Headline" />
 
