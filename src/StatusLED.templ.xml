@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_14/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" xmlns="http://knx.org/xml/project/14" CreatedBy="KNX MT" ToolVersion="5.1.255.16695">
+  <ManufacturerData>
+    <Manufacturer RefId="M-00FA">
+      <ApplicationPrograms>
+        <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="SLED" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de" DynamicTableManagement="false" Linkable="true" MinEtsVersion="4.0" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
+          <Static>
+            <Parameters>
+              <Parameter Id="%AID%_P-%TT%%CC%000" Name="Name_%C%" ParameterType="%AID%_PT-Text40Byte" Text="Beschreibung" Value="%SLEDdefaultName%C%%" />
+
+              <Union SizeInBit="320">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="0" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%001" Name="Mode_%C%" Offset="0" BitOffset="0" ParameterType="%AID%_PT-SLEDMode" Text="Betriebsmodus" Value="%SLEDdefaultMode%C%%" />
+
+                <Parameter Id="%AID%_UP-%TT%%CC%002" Name="Func_%C%" Offset="1" BitOffset="0" ParameterType="%AID%_PT-SLEDFunc" Text="LED-Funktion" Value="%SLEDdefaultFunc%C%%" />
+
+                <Parameter Id="%AID%_UP-%TT%%CC%003" Name="Type_%C%" Offset="0" BitOffset="4" ParameterType="%AID%_PT-SLEDType" Text="LED-Typ" Value="%SLEDdefaultType%C%%" />
+
+                <Parameter Id="%AID%_UP-%TT%%CC%004" Name="DetailedControl_%C%" Offset="2" BitOffset="0" ParameterType="%AID%_PT-SLEDKoControlType" Text="Erweiterte KOs" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%005" Name="Prio1Active_%C%" Offset="1" BitOffset="4" ParameterType="%AID%_PT-SLEDPrioControl" Text="Prio1 aktiv" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%006" Name="Prio2Active_%C%" Offset="1" BitOffset="6" ParameterType="%AID%_PT-SLEDPrioControl" Text="Prio2 aktiv" Value="0" />
+
+                <Parameter Id="%AID%_UP-%TT%%CC%010" Name="ColorOff_%C%" Offset="3" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für AUS" Value="#000000" />
+                <Parameter Id="%AID%_UP-%TT%%CC%011" Name="ColorOn_%C%" Offset="6" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für AN" Value="#00FF00"/>
+                <Parameter Id="%AID%_UP-%TT%%CC%012" Name="ColorPrio1_%C%" Offset="9" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für Prio1" Value="#00FF00"/>
+                <Parameter Id="%AID%_UP-%TT%%CC%013" Name="ColorPrio2_%C%" Offset="12" BitOffset="0" ParameterType="%AID%_PT-ValueColor" Text="Farbwert für Prio2" Value="#00FF00"/>
+
+                <Parameter Id="%AID%_UP-%TT%%CC%014" Name="BrightnessOff_%C%" Offset="15" BitOffset="0" ParameterType="%AID%_PT-Percent" Text="Helligkeit für AUS" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%015" Name="BrightnessOn_%C%" Offset="16" BitOffset="0" ParameterType="%AID%_PT-Percent" Text="Helligkeit für AN" Value="100" />
+                <Parameter Id="%AID%_UP-%TT%%CC%016" Name="BrightnessPrio1_%C%" Offset="17" BitOffset="0" ParameterType="%AID%_PT-Percent" Text="Helligkeit für Prio1" Value="100" />
+                <Parameter Id="%AID%_UP-%TT%%CC%017" Name="BrightnessPrio2_%C%" Offset="18" BitOffset="0" ParameterType="%AID%_PT-Percent" Text="Helligkeit für Prio2" Value="100" />
+
+                <Parameter Id="%AID%_UP-%TT%%CC%018" Name="EffectOff_%C%" Offset="19" BitOffset="0" ParameterType="%AID%_PT-SLEDEffect" Text="Effekt für AUS" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%019" Name="EffectOn_%C%" Offset="23" BitOffset="0" ParameterType="%AID%_PT-SLEDEffect" Text="Effekt für AN" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%020" Name="EffectPrio1_%C%" Offset="27" BitOffset="0" ParameterType="%AID%_PT-SLEDEffect" Text="Effekt für Prio1" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%021" Name="EffectPrio2_%C%" Offset="31" BitOffset="0" ParameterType="%AID%_PT-SLEDEffect" Text="Effekt für Prio2" Value="0" />
+
+              </Union>
+            </Parameters>
+            <ParameterRefs>
+              <ParameterRef Id="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" RefId="%AID%_P-%TT%%CC%000" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101" RefId="%AID%_UP-%TT%%CC%001" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%002_R-%TT%%CC%00201" RefId="%AID%_UP-%TT%%CC%002" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301" RefId="%AID%_UP-%TT%%CC%003" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%004_R-%TT%%CC%00401" RefId="%AID%_UP-%TT%%CC%004" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501" RefId="%AID%_UP-%TT%%CC%005" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601" RefId="%AID%_UP-%TT%%CC%006" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001" RefId="%AID%_UP-%TT%%CC%010" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%011_R-%TT%%CC%01101" RefId="%AID%_UP-%TT%%CC%011" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%012_R-%TT%%CC%01201" RefId="%AID%_UP-%TT%%CC%012" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%013_R-%TT%%CC%01301" RefId="%AID%_UP-%TT%%CC%013" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%014_R-%TT%%CC%01401" RefId="%AID%_UP-%TT%%CC%014" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%015_R-%TT%%CC%01501" RefId="%AID%_UP-%TT%%CC%015" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%016_R-%TT%%CC%01601" RefId="%AID%_UP-%TT%%CC%016" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%017_R-%TT%%CC%01701" RefId="%AID%_UP-%TT%%CC%017" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%018_R-%TT%%CC%01801" RefId="%AID%_UP-%TT%%CC%018" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%019_R-%TT%%CC%01901" RefId="%AID%_UP-%TT%%CC%019" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%020_R-%TT%%CC%02001" RefId="%AID%_UP-%TT%%CC%020" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%021_R-%TT%%CC%02101" RefId="%AID%_UP-%TT%%CC%021" />
+            </ParameterRefs>
+            <ComObjectTable>
+              <ComObject Id="%AID%_O-%TT%%CC%001" Name="StatusLED_Switch_%C%"          Number="%K0%" ObjectSize="1 Bit"   Text="{{0:Status LED %Z%}}: Schalten" FunctionText="SLED %Z%: Eingang" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%002" Name="StatusLED_Prio1_%C%"           Number="%K1%" ObjectSize="1 Bit"   Text="{{0:Status LED %Z%}}: Prio1"    FunctionText="SLED %Z%: Eingang" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%003" Name="StatusLED_Prio2_%C%"           Number="%K2%" ObjectSize="1 Bit"   Text="{{0:Status LED %Z%}}: Prio2"    FunctionText="SLED %Z%: Eingang" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%004" Name="StatusLED_BrightnessColor_%C%" Number="%K3%" ObjectSize="3 Bytes" Text="{{0:Status LED %Z%}}: Farbe"    FunctionText="SLED %Z%: Eingang" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" />
+              <ComObject Id="%AID%_O-%TT%%CC%005" Name="StatusLED_Effect_%C%"          Number="%K4%" ObjectSize="4 Bytes" Text="{{0:Status LED %Z%}}: Effekt"   FunctionText="SLED %Z%: Eingang" ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-12-1" />
+            </ComObjectTable>
+            <ComObjectRefs>
+              <ComObjectRef Id="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101" RefId="%AID%_O-%TT%%CC%001" TextParameterRefId="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%002_R-%TT%%CC%00201" RefId="%AID%_O-%TT%%CC%002" TextParameterRefId="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%003_R-%TT%%CC%00301" RefId="%AID%_O-%TT%%CC%003" TextParameterRefId="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%004_R-%TT%%CC%00401" RefId="%AID%_O-%TT%%CC%004" TextParameterRefId="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" Text="{{0:Status LED %Z%}}: Farbe"      FunctionText="SLED %Z%: Eingang, RGB" ObjectSize="3 Bytes" DatapointType="DPST-232-600"/>
+              <ComObjectRef Id="%AID%_O-%TT%%CC%004_R-%TT%%CC%00402" RefId="%AID%_O-%TT%%CC%004" TextParameterRefId="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" Text="{{0:Status LED %Z%}}: Helligkeit" FunctionText="SLED %Z%: Eingang, Prozent" ObjectSize="1 Byte"  DatapointType="DPST-5-1"/>
+              <ComObjectRef Id="%AID%_O-%TT%%CC%005_R-%TT%%CC%00501" RefId="%AID%_O-%TT%%CC%005" TextParameterRefId="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" />
+            </ComObjectRefs>
+          </Static>
+          <Dynamic>
+            <ChannelIndependentBlock>
+              <choose ParamRefId="%AID%_UP-%TT%00001_R-%TT%0000101">
+                <when test="&gt;=%C%">
+                  <!-- START INCLUDE HERE -->
+                  <ParameterBlock Id="%AID%_PB-nnn" Name="b%C%Page" Text="Status LED %C%: {{0: ...}}" TextParameterRefId="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" Icon="led-on" HelpContext="SLED-Modus" ShowInComObjectTree="true">
+                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Konfiguration" UIHint="Headline" />
+                    <!-- Name -->
+                    <ParameterRefRef RefId="%AID%_P-%TT%%CC%000_R-%TT%%CC%00001" IndentLevel="1" HelpContext="SLED-Modus" />
+                    <!-- Mode -->
+                    <ParameterRefRef RefId="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101" IndentLevel="1" HelpContext="SLED-Modus" /> <!-- Mode -->
+                    <choose ParamRefId="%AID%_UP-%TT%%CC%001_R-%TT%%CC%00101"> <!-- Mode -->
+                      <when test="1"> <!-- Mode: LED-Function -->
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%002_R-%TT%%CC%00201" IndentLevel="2" HelpContext="SLED-LED-Funktion" /> <!-- LED-Function -->
+                      </when>
+                      <when test="2"> <!-- Mode: Manual -->
+                        <ComObjectRefRef RefId="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101"/> <!-- KO Switch -->
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301" IndentLevel="2" HelpContext="SLED-LED-Typ" /> <!-- Type -->
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Schalten (AN/AUS)" UIHint="Headline" />
+
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                          <when test="1"> <!-- Type: Monochrom -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%014_R-%TT%%CC%01401" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Brightness: Off -->
+                          </when>
+                          <when test="2"> <!-- Type: RGB -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Color: Off -->
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%018_R-%TT%%CC%01801" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Effect: Off -->
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                          <when test="1"> <!-- Type: Monochrom -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%015_R-%TT%%CC%01501" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Brightness: On -->
+                          </when>
+                          <when test="2"> <!-- Type: RGB -->
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%011_R-%TT%%CC%01101" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Color: On -->
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%019_R-%TT%%CC%01901" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Effect: On -->
+
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Prio1" UIHint="Headline" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501" IndentLevel="2" HelpContext="SLED-KO-Steuerung" /> <!-- Prio1Active -->
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%005_R-%TT%%CC%00501"> <!-- Prio1Active -->
+                          <when test="!=0"> <!-- Prio1Active: Yes-->
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                              <when test="1"> <!-- Type: Monochrom -->
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%016_R-%TT%%CC%01601" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Brightness: Prio1 -->
+                              </when>
+                              <when test="2"> <!-- Type: RGB -->
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%012_R-%TT%%CC%01201" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Color: Prio1 -->
+                              </when>
+                            </choose>
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%020_R-%TT%%CC%02001" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Effect: Prio1 -->
+                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%002_R-%TT%%CC%00201"/> <!-- KO Prio1 -->
+                          </when>
+                        </choose>
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Prio2" UIHint="Headline" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601" IndentLevel="2" HelpContext="SLED-KO-Steuerung" /> <!-- Prio2Active -->
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%006_R-%TT%%CC%00601"> <!-- Prio2Active -->
+                          <when test="!=0"> <!-- Prio2Active: Yes-->
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                              <when test="1"> <!-- Type: Monochrom -->
+                               <ParameterRefRef RefId="%AID%_UP-%TT%%CC%017_R-%TT%%CC%01701" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Brightness: Prio2 -->
+                              </when>
+                              <when test="2"> <!-- Type: RGB -->
+                               <ParameterRefRef RefId="%AID%_UP-%TT%%CC%013_R-%TT%%CC%01301" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Color: Prio2 -->
+                              </when>
+                            </choose>
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%021_R-%TT%%CC%02101" IndentLevel="3" HelpContext="SLED-KO-Steuerung" /> <!-- Effect: Prio2 -->
+                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%003_R-%TT%%CC%00301"/> <!-- KO Prio2 -->
+                          </when>
+                        </choose>
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Erweiterte KO Steuerung (Farbe / Helligkeit / Effekt)" UIHint="Headline" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%004_R-%TT%%CC%00401" IndentLevel="2" HelpContext="SLED-Erweiterte-KOs" /> <!-- KO-Control -->
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%004_R-%TT%%CC%00401"> <!-- Detailed-KO-->
+                          <when test="!=0">
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%003_R-%TT%%CC%00301"> <!-- Type -->
+                              <when test="1"> <!-- Type: Monochrom -->
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00402"/> <!-- KO Brightness -->
+                              </when>
+                              <when test="2"> <!-- Type: RGB -->
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%004_R-%TT%%CC%00401"/> <!-- KO Color -->
+                              </when>
+                            </choose>
+                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%005_R-%TT%%CC%00501"/> <!-- KO Effekt -->
+                          </when>
+                        </choose>
+
+                      </when>
+                    </choose>
+                  </ParameterBlock>
+                </when>
+              </choose>
+            </ChannelIndependentBlock>
+          </Dynamic>
+        </ApplicationProgram>
+      </ApplicationPrograms>
+    </Manufacturer>
+  </ManufacturerData>
+</KNX>
