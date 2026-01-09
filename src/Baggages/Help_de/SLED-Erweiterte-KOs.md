@@ -1,5 +1,6 @@
 ﻿### Erweiterte KOs
 
+Hier können zwei zusätzliche KOs Farbe/Helligkeit und Effekt eingeblendet werden.
 
 "ändern den Zustand AN"  
 hier werden die für den Zustand AN hinterlegten Paramter durch den jeweils gültigen Wert geändert. Eine unmittelbaren Effekt hat ein empfangender Wert auf die LED dann nur, wenn diese im Zustand AN ist.  

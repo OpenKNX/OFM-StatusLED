@@ -1,5 +1,6 @@
 ﻿### KO-Steuerung
 
+Das Verhalten der StatusLED wird durch Kommunikationsobjekte und Parameter bestimmt.
 
 Über die Parameter kann für jeden der 4 Zustände (AUS, AN, Prio1, Prio2) das Verhalten der LED festgelegt werden.
 
