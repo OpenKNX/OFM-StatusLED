@@ -8,7 +8,7 @@ Dabei stehen Farbe (RGB) bzw Helligkeit (einfarbig) und ein Effekt (Blinken und 
 
 Um eine LED auszuschalten ist die Farbe schwarz (0x000000) bzw die Helligkeit 0% zu wählen.
 
-Folgende Wahrheistabelle zeigt den Zusammenhang zwischen den KOs und dem LED-Bild
+Folgende Wahrheitstabelle zeigt den Zusammenhang zwischen den KOs und dem LED-Bild
 
 ```
  KO Schalten | KO Prio1 | KO Prio 2 | Zustand 

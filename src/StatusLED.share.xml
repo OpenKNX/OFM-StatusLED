@@ -23,6 +23,11 @@
   <op:config name="%SLEDdefaultFunc4%" value="0"></op:config>
   <op:config name="%SLEDdefaultType4%" value="1"></op:config>
 
+  <op:config name="%SLEDdefaultTypeAccess1%" value="ReadWrite" />
+  <op:config name="%SLEDdefaultTypeAccess2%" value="ReadWrite" />
+  <op:config name="%SLEDdefaultTypeAccess3%" value="ReadWrite" />
+  <op:config name="%SLEDdefaultTypeAccess4%" value="ReadWrite" />
+
   <ManufacturerData>
     <Manufacturer>
       <ApplicationPrograms>
