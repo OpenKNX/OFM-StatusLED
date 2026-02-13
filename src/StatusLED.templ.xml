@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="../../Organization/knxprod-support/knx_project_14/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<?xml-model href="../../../../Organization/knxprod-support/knx_project_14/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <KNX xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" xmlns="http://knx.org/xml/project/14" CreatedBy="KNX MT" ToolVersion="5.1.255.16695">
+
+  <op:config name="%SLEDdefaultName%C%%" value="" />
+  <op:config name="%SLEDdefaultMode%C%%" value="1" />
+  <op:config name="%SLEDdefaultFunc%C%%" value="0" />
+  <op:config name="%SLEDdefaultType%C%%" value="1" />
+  <op:config name="%SLEDdefaultTypeAccess%C%%" value="ReadWrite" />
+
   <ManufacturerData>
     <Manufacturer RefId="M-00FA">
       <ApplicationPrograms>

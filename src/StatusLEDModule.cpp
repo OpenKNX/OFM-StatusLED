@@ -11,9 +11,17 @@ const std::string StatusLEDModule::version()
     return MODULE_StatusLED_Version;
 }
 
+int StatusLEDModule::channelCount() {
+#ifndef OPENKNX_SLED_IDs
+    return 0;
+#else
+    return ParamSLED_VisibleChannels;
+#endif
+}
+
 void StatusLEDModule::setup()
 {
-    for (uint8_t i = 0; i < ParamSLED_VisibleChannels; i++)
+    for (uint8_t i = 0; i < channelCount(); i++)
     {
         _channels[i] = new StatusLEDChannel(i, _ledIds[i]);
         _channels[i]->setup();
@@ -22,17 +30,17 @@ void StatusLEDModule::setup()
 
 void StatusLEDModule::loop()
 {
-    if (ParamSLED_VisibleChannels == 0) return;
+    if (channelCount() == 0) return;
 
     uint8_t processed = 0;
     do
         _channels[_currentChannel]->loop();
-    while (openknx.freeLoopIterate(ParamSLED_VisibleChannels, _currentChannel, processed));
+    while (openknx.freeLoopIterate(channelCount(), _currentChannel, processed));
 }
 
 void StatusLEDModule::processInputKo(GroupObject& iKo)
 {
-    for (uint8_t i = 0; i < ParamSLED_VisibleChannels; i++)
+    for (uint8_t i = 0; i < channelCount(); i++)
         _channels[i]->processInputKo(iKo);
 }
 
