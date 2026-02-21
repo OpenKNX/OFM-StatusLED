@@ -15,7 +15,7 @@ int StatusLEDModule::channelCount() {
 #ifndef OPENKNX_SLED_IDs
     return 0;
 #else
-    return ParamSLED_VisibleChannels;
+    return MIN(ParamSLED_VisibleChannels, OPENKNX_SLED_COUNT);
 #endif
 }
 
